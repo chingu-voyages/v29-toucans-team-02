@@ -1,3 +1,7 @@
+body {
+  margin: 0 auto;
+}
+
 /* customer toggler */
 
 .custom-toggler .navbar-toggler-icon {
