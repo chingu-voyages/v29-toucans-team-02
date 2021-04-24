@@ -1,93 +1,103 @@
-const recommendedDestinations = {
+const recommendedDestinations = [
     {
-        city: 'Capri'
-        country:'Italy'
-        image:
+        city:'Capri',
+        country:'Italy',
+        image:'images/recommendations/capri2.jpg'
     },
     {
-        city:'Braga'
-        country:'Portugal'
-        image:
+        city:'Lisbon',
+        country:'Portugal',
+        image:'images/recommendations/lison.jpg'
     },
     {
-        city:'Tahiti'
-        country:'French Polynesia'
-        image:
+        city:'Tahiti',
+        country:'French Polynesia',
+        image:'images/recommendations/tahiti.jpg'
     },
     {
-        city:'Vienna'
-        country:'Austria'
-        image:
+        city:'Vienna',
+        country:'Austria',
+        image: 'images/recommendations/vienna.jpg'
     },
     {
-        city:'Chiapas'
-        country:'Mexico'
-        image:
+        city:'Chiapas',
+        country:'Mexico',
+        image:'images/recommendations/chiapas.jpg'
     },
     {
-        city:'Hokianga'
-        country:'New Zealand'
-        image:
+        city:'Queenstown',
+        country:'New Zealand',
+        image:'images/recommendations/queenstown.jpg'
     },
     {
-        city:'Tampa, FL'
-        country:'USA'
-        image:
+        city:'Tampa, FL',
+        country:'USA',
+        image:'images/recommendations/tampa.jpg'
     },
     {
-        city:'Tasmania'
-        country:'Australia'
-        image:
+        city:'Tasmania',
+        country:'Australia',
+        image:'images/recommendations/tasmania.jpg'
     },
     {
-        city:'Siargao Island'
-        country:'Phillipines'
-        image:
+        city:'Siargao Island',
+        country:'Phillipines',
+        image:'images/recommendations/island.jpg'
     },
     {
-        city:'Havana'
-        country:'Cuba'
-        image:
+        city:'Havana',
+        country:'Cuba',
+        image:'images/recommendations/havana.jpg'
     },
     {
-        city:'Cusco'
-        country:'Peru'
-        image:
+        city:'Cusco',
+        country:'Peru',
+        image:'images/recommendations/cusco.jpg'
     },
     {
-        city:'Hanoi'
-        country:'Vietnam'
-        image:
+        city:'Hanoi',
+        country:'Vietnam',
+        image:'images/recommendations/hanoi.jpg'
     },
     {
-        city:'Bali'
-        country:'Indonesia'
-        image:
+        city:'Bali',
+        country:'Indonesia',
+        image:'images/recommendations/bali.jpg'
     },
     {
-        city:'Banff'
-        country:'Canada'
-        image:
+        city:'Banff',
+        country:'Canada',
+        image:'images/recommendations/banff.jpg'
     },
     {
-        city:'Bangkok'
-        country:'Thailand'
-        image:
+        city:'Bangkok',
+        country:'Thailand',
+        image:'images/recommendations/bangkok.jpg'
     },
     {
-        city:'Kathmandu'
-        country:'Nepal'
-        image:
+        city:'Kathmandu',
+        country:'Nepal',
+        image:'images/recommendations/kathmandu.jpg'
     },
     {
-        city:'London'
-        country:'UK'
-        image:
+        city:'London',
+        country:'UK',
+        image:'images/recommendations/london.jpg'
     },
-    {
-        city:'Okavango Delta'
-        country:'Botswana'
-        image:
-    }
+]
+/* number of cards available on the homepage for recommended destinations*/
+const destinationCards = 6;
 
-}
+/* length of the list of recommended destinations*/
+const destinationLength = recommendedDestinations.length;
+
+/* Function to create a set of random numbers within the range of current travel destinations available*/
+function myRandomInts(quantity, max){
+    let set = new Set()
+    while(set.size < quantity) {
+      set.add(Math.floor(Math.random() * max) + 1)
+    }
+    return set
+  }
+
+console.log(myRandomInts(destinationCards, destinationLength))
