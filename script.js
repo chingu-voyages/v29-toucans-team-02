@@ -1,0 +1,93 @@
+const recommendedDestinations = {
+    {
+        city: 'Capri'
+        country:'Italy'
+        image:
+    },
+    {
+        city:'Braga'
+        country:'Portugal'
+        image:
+    },
+    {
+        city:'Tahiti'
+        country:'French Polynesia'
+        image:
+    },
+    {
+        city:'Vienna'
+        country:'Austria'
+        image:
+    },
+    {
+        city:'Chiapas'
+        country:'Mexico'
+        image:
+    },
+    {
+        city:'Hokianga'
+        country:'New Zealand'
+        image:
+    },
+    {
+        city:'Tampa, FL'
+        country:'USA'
+        image:
+    },
+    {
+        city:'Tasmania'
+        country:'Australia'
+        image:
+    },
+    {
+        city:'Siargao Island'
+        country:'Phillipines'
+        image:
+    },
+    {
+        city:'Havana'
+        country:'Cuba'
+        image:
+    },
+    {
+        city:'Cusco'
+        country:'Peru'
+        image:
+    },
+    {
+        city:'Hanoi'
+        country:'Vietnam'
+        image:
+    },
+    {
+        city:'Bali'
+        country:'Indonesia'
+        image:
+    },
+    {
+        city:'Banff'
+        country:'Canada'
+        image:
+    },
+    {
+        city:'Bangkok'
+        country:'Thailand'
+        image:
+    },
+    {
+        city:'Kathmandu'
+        country:'Nepal'
+        image:
+    },
+    {
+        city:'London'
+        country:'UK'
+        image:
+    },
+    {
+        city:'Okavango Delta'
+        country:'Botswana'
+        image:
+    }
+
+}
