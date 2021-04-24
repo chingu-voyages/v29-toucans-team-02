@@ -13,7 +13,28 @@
 
 /* classic blue color */
 
-  .text-main {
+.text-main {
     color: #00296B !important;
-  }
-  
+}
+
+.recommendations {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.imageCard {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.cardText {
+  width: 100%;
+  background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(42, 40, 40));
+}
+
+.cardText h4 {
+  color: white;
+} 
+
+.cardText h5 {
+  color: #FDC500;
+}
