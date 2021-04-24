@@ -11,17 +11,42 @@
     color: rgb(253,197,0);
   } 
 
-/* classic blue color */
+/* classic blue color for Navigation*/
 
 .text-main {
     color: #00296B !important;
 }
 
+/* recommendation cards start here*/
+
+/* recommendation section */
 .recommendations {
   font-family: 'Libre Baskerville', serif;
 }
 
-.imageCard {
+/* background color of recommendation section*/
+.rowStyle {
+  background-color: #d7dadd;
+}
+
+.columnStyle {
+  background-color: #d7dadd;
+}
+
+.recommendations-container  {
+  background-color: #d7dadd;
+}
+
+/* recommendation title */
+.recommendationTitle h3 {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+/* destination cards start here */
+.cardContent {
   margin-left: 12px;
   margin-right: 12px;
 }
@@ -29,6 +54,7 @@
 .cardText {
   width: 100%;
   background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(42, 40, 40));
+  border-radius: 0 0 0 15px;
 }
 
 .cardText h4 {
@@ -37,4 +63,8 @@
 
 .cardText h5 {
   color: #FDC500;
+}
+
+.cardImg {
+  border-radius: 15px;
 }
