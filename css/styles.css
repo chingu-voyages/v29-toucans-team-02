@@ -10,6 +10,10 @@
     color: rgb(253,197,0);
   } 
 
+.nb {
+    max-width: 1172px;
+  }
+
 /* classic blue color for Navigation*/
 
 .text-main {
@@ -34,6 +38,7 @@
 
 .recommendations-container  {
   background-color: #d7dadd;
+  max-width: 1172px;
 }
 
 /* recommendation title */
