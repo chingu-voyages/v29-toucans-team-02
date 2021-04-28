@@ -177,8 +177,11 @@ Google Map Styling
 
 #map {
   /* border: 3px solid red; */
-  display: none;
   height: 500px;
-  width: 75vw;
+  width: 25vw;
   margin: 0 auto;
+}
+
+.hide {
+  display: none;
 }

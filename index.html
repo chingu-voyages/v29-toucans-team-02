@@ -25,7 +25,9 @@
 
     <title>Wikki Trip</title>
   </head>
+
   <body>
+    <!-- header -->
     <header>
       <nav class="navbar navbar-expand-sm navbar-light bg-light ps-3 pe-2">
         <div class="container-fluid">
@@ -62,54 +64,66 @@
         <!-- / container -->
       </nav>
     </header>
+
+    <!-- Main -->
     <main>
-      <!-- Search section -->
-      <section class="search-section">
-        <div class="search-section-container">
-          <h1>Explore the world with WIKI trip</h1>
-          <div class="search-container">
-            <!-- destination & Calendar input container -->
-            <div class="destination-calendar-container">
-              <!-- destination search input-->
-              <div class="destination-container">
-                <label for="start">Where to:</label>
-                <input
-                  type="text"
-                  id="searchInput"
-                  class="controls"
-                  name="trip"
-                  placeholder="city, country"
-                />
+      <!-- main-page  -->
+      <div id="main-page">
+        <!-- Search section -->
+        <section class="search-section">
+          <div class="search-section-container">
+            <h1>Explore the world with WIKI trip</h1>
+            <div class="search-container">
+              <!-- destination & Calendar input container -->
+              <div class="destination-calendar-container">
+                <!-- destination search input-->
+                <div class="destination-container">
+                  <label for="start">Where to:</label>
+                  <input
+                    type="text"
+                    id="searchInput"
+                    class="controls"
+                    name="trip"
+                    placeholder="city, country"
+                  />
+                </div>
+
+                <!-- calendar input -->
+                <div class="calendar-container">
+                  <!-- departure date input -->
+                  <article class="departure">
+                    <label for="start">Depart</label>
+                    <input type="date" id="start" name="trip-start" />
+                  </article>
+
+                  <!-- arrival date input -->
+                  <article class="arrival">
+                    <label for="start">Return</label>
+                    <input type="date" id="start" name="trip-start" />
+                  </article>
+                </div>
               </div>
 
-              <!-- calendar input -->
-              <div class="calendar-container">
-                <!-- departure date input -->
-                <article class="departure">
-                  <label for="start">Depart</label>
-                  <input type="date" id="start" name="trip-start" />
-                </article>
-
-                <!-- arrival date input -->
-                <article class="arrival">
-                  <label for="start">Return</label>
-                  <input type="date" id="start" name="trip-start" />
-                </article>
+              <!-- search button -->
+              <div class="search-button">
+                <a href="#" class="search-btn"
+                  ><input type="button" value="Search " class="search-btnn" />
+                </a>
               </div>
-            </div>
-
-            <!-- search button -->
-            <div class="search-button">
-              <a href="#" class="search-btn"
-                ><input type="button" value="Search " class="search-btnn" />
-              </a>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- Google map -->
-      <div id="map"></div>
+        </section>
+        <!-- end of Search Section -->
+      </div>
+      <!-- end of main-page -->
+
+      <!-- result page -->
+      <div id="result-page" class="hide">
+        <!-- Google map -->
+        <div id="map"></div>
+      </div>
     </main>
+    <!-- end of result page -->
 
     <!-- External javascript -->
     <script src="./js/app.js"></script>

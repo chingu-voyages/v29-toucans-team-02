@@ -4,6 +4,15 @@ Select Elements
 =================
 */
 
+// main-page
+const mainPage = document.getElementById("main-page");
+
+// result-page
+const resultPage = document.getElementById("result-page");
+
+// Google Map
+const gmap = document.getElementById("map");
+
 // Select Button
 const searchBtn = document.querySelector(".search-btnn");
 
@@ -16,6 +25,12 @@ var input = document.getElementById("searchInput");
 // Select a value of search input
 var theValue;
 var res;
+
+// Create a destiny element
+let destiny;
+
+// Create a destiny country
+let country;
 
 /*
 =============
@@ -55,7 +70,7 @@ function initMap() {
   // The location of NYC
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 40.78343, lng: -73.96625 },
-    zoom: 11,
+    zoom: 13,
   });
 
   // Input field where you search a city
@@ -80,10 +95,12 @@ function initMap() {
     var place = autocomplete.getPlace();
     theValue = input.value;
     res = theValue.split(",");
+    /*
     console.log(res);
     console.log(res[0]);
     console.log(theValue);
     console.log(input.value);
+    */
 
     // If the place doesn't have a geometry, alert a message
     if (!place.geometry) {
@@ -94,6 +111,7 @@ function initMap() {
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
+      map.setZoom(10);
     } else {
       map.setCenter(place.geometry.location);
       map.setZoom(17);
@@ -140,10 +158,22 @@ Search Button Click Event
 ============
 */
 
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", function (e) {
+  console.log(e);
+  e.preventDefault();
+  // Hide Main Page
+  mainPage.classList.add("hide");
+
+  // Show Result Page
+  resultPage.classList.remove("hide");
+
   console.log("clicked");
   // console.log(input);
   // console.log(input.value);
   console.log(res);
-  console.log(res[0]);
+  destiny = res[0];
+  country = res[res.length - 1];
+  newCountry = country.slice(1, country.length);
+  console.log("destiny: ", destiny);
+  console.log("newCountry: ", newCountry);
 });
