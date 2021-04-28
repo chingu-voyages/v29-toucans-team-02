@@ -174,6 +174,6 @@ searchBtn.addEventListener("click", function (e) {
   destiny = res[0];
   country = res[res.length - 1];
   newCountry = country.slice(1, country.length);
-  console.log("destiny: ", destiny);
+  console.log("destination: ", destiny);
   console.log("newCountry: ", newCountry);
 });
