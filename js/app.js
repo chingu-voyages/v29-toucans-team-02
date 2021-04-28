@@ -1,12 +1,27 @@
-// Random number from 1 - 10
+/*
+=================
+Select Elements
+=================
+*/
 
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber);
+// Select Button
+const searchBtn = document.querySelector(".search-btnn");
 
 //Select image
 const searchSection = document.querySelector(".search-section");
 
-//Background Media Queries
+// Select Input
+var input = document.getElementById("searchInput");
+
+// Select a value of search input
+var theValue;
+var res;
+
+/*
+=============
+Background Media Queries
+=============
+*/
 const mediaQuery = window.matchMedia("(min-width: 789px)");
 
 function handleTabletChange(e) {
@@ -19,6 +34,10 @@ function handleTabletChange(e) {
     searchSection.style.background = `#02122C`;
   }
 }
+
+// Random number from 1 - 10 for Random Background Image
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber);
 
 // Register event listener
 mediaQuery.addListener(handleTabletChange);
@@ -40,7 +59,7 @@ function initMap() {
   });
 
   // Input field where you search a city
-  var input = document.getElementById("searchInput");
+  // var input = document.getElementById("searchInput");
   //   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Autocomplete
@@ -59,8 +78,8 @@ function initMap() {
     infowindow.close();
     marker.setVisible(false);
     var place = autocomplete.getPlace();
-    var theValue = input.value;
-    var res = theValue.split(",");
+    theValue = input.value;
+    res = theValue.split(",");
     console.log(res);
     console.log(res[0]);
     console.log(theValue);
@@ -114,3 +133,17 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
+
+/*
+============
+Search Button Click Event
+============
+*/
+
+searchBtn.addEventListener("click", function () {
+  console.log("clicked");
+  // console.log(input);
+  // console.log(input.value);
+  console.log(res);
+  console.log(res[0]);
+});
