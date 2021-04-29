@@ -108,32 +108,26 @@ let setOfRandomNumbers = myRandomInts(destinationCards, destinationLength)
 function getDestinationFromList(setOfRandomNumbers) {
     const setIter = setOfRandomNumbers[Symbol.iterator]();
         let ObjForCard1 = setIter.next().value
-        console.log(ObjForCard1);
         document.getElementById("image1").src = recommendedDestinations[ObjForCard1].image;
         document.getElementById("cityName1").innerText = recommendedDestinations[ObjForCard1].city;
         document.getElementById("countryName1").innerText = recommendedDestinations[ObjForCard1].country;
         let ObjForCard2 = setIter.next().value
-        console.log(ObjForCard2);
         document.getElementById("image2").src = recommendedDestinations[ObjForCard2].image;
         document.getElementById("cityName2").innerText = recommendedDestinations[ObjForCard2].city;
         document.getElementById("countryName2").innerText = recommendedDestinations[ObjForCard2].country;
         let ObjForCard3 = setIter.next().value
-        console.log(ObjForCard3);
         document.getElementById("image3").src = recommendedDestinations[ObjForCard3].image;
         document.getElementById("cityName3").innerText = recommendedDestinations[ObjForCard3].city;
         document.getElementById("countryName3").innerText = recommendedDestinations[ObjForCard3].country;
         let ObjForCard4 = setIter.next().value
-        console.log(ObjForCard4);
         document.getElementById("image4").src = recommendedDestinations[ObjForCard4].image;
         document.getElementById("cityName4").innerText = recommendedDestinations[ObjForCard4].city;
         document.getElementById("countryName4").innerText = recommendedDestinations[ObjForCard4].country;
         let ObjForCard5 = setIter.next().value
-        console.log(ObjForCard5);
         document.getElementById("image5").src = recommendedDestinations[ObjForCard5].image;
         document.getElementById("cityName5").innerText = recommendedDestinations[ObjForCard5].city;
         document.getElementById("countryName5").innerText = recommendedDestinations[ObjForCard5].country;
         let ObjForCard6 = setIter.next().value
-        console.log(ObjForCard6);
         document.getElementById("image6").src = recommendedDestinations[ObjForCard6].image;
         document.getElementById("cityName6").innerText = recommendedDestinations[ObjForCard6].city;
         document.getElementById("countryName6").innerText = recommendedDestinations[ObjForCard6].country;
@@ -141,4 +135,11 @@ function getDestinationFromList(setOfRandomNumbers) {
 }
 /* calling function to update destinations*/
 getDestinationFromList(setOfRandomNumbers);
+
+const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
+const API_USERID = 'EIT7ZL9V'
+
+fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=10&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
+    .then(response => response.json())
+    .then(data => console.log(data)) 
 
