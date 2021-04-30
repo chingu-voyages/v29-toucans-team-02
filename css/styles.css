@@ -259,5 +259,5 @@ result-page
 #result-page {
   max-width: 1172px;
   margin: 0 auto;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
