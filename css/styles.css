@@ -249,3 +249,15 @@ Recommendation
 .cardImg {
   border-radius: 15px;
 }
+
+/*
+=============
+result-page
+=============
+*/
+
+#result-page {
+  max-width: 1172px;
+  margin: 0 auto;
+  border: 3px solid red;
+}
