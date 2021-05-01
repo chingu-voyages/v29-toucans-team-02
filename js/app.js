@@ -180,6 +180,37 @@ function searchBtnEvent() {
 
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
+
+    // Add destination info into destination-info
+    const url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=${destiny}&redirects=`;
+    console.log(url);
+    fetch(url)
+      .then((resp) => {
+        console.log(resp);
+        return resp.json();
+      })
+      .then((data) => {
+        console.log(data);
+
+        let page = data.query.pages;
+        console.log(page);
+        let pageId = Object.keys(data.query.pages);
+        console.log(pageId);
+
+        let aboutPage = page[pageId];
+        console.log(aboutPage);
+
+        let aboutCity = aboutPage.extract;
+        console.log(aboutCity);
+        console.log(typeof aboutCity);
+
+        let string = aboutCity.split("(");
+        let theCity = string[0];
+        console.log(string);
+        console.log(theCity);
+
+        destinationInfo.textContent = aboutCity;
+      });
   });
 }
 
@@ -357,10 +388,13 @@ recommendations();
 
 /*
 ==================
-Main page: city-name
+Result page
 ==================
 */
 
 // select the city-name elements
 const destinationName = document.querySelector(".destination-name");
 console.log(destinationName);
+
+// select mediawiki destination
+const destinationInfo = document.querySelector(".mediawiki-destination");
