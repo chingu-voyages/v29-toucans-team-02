@@ -173,19 +173,6 @@ input {
   }
 }
 
-/*
-=============
-Google Map Styling
-=============
-*/
-
-#map {
-  /* border: 3px solid red; */
-  height: 500px;
-  width: 25vw;
-  margin: 0 auto;
-}
-
 .hide {
   display: none;
 }
@@ -260,4 +247,68 @@ result-page
   max-width: 1172px;
   margin: 0 auto;
   /* border: 3px solid red; */
+}
+
+/* 
+==============
+Destination title
+==============
+*/
+
+.destination-title {
+  margin: 1rem;
+}
+
+/* 
+===========
+mediawiki
+===========
+*/
+
+.wiki-gmap-container {
+  border: 3px solid aqua;
+  margin: 1rem;
+}
+
+.mediawiki {
+  border: 3px solid red;
+  background: #f2f2f2;
+  height: 38vh;
+  overflow-y: scroll;
+  margin-bottom: 1.5rem;
+}
+
+/*
+=============
+Google Map Styling
+=============
+*/
+
+.google-map {
+  border: 3px solid blue;
+  margin-bottom: 1.5rem;
+}
+
+#map {
+  /* border: 3px solid red; */
+  height: 38vh;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .wiki-gmap-container {
+    /* border: 3px solid blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .mediawiki {
+    flex: 1 0 calc(50% - 1rem);
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  .google-map {
+    flex: 1 0 calc(50% - 1rem);
+    margin-bottom: 0;
+  }
 }
