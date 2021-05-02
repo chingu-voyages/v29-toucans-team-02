@@ -181,8 +181,8 @@ function searchBtnEvent() {
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
 
-    // Add destination info into destination-info
-    const url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=${destiny}&redirects=`;
+    // Fetch Mediawiki API
+    const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=${destiny}&redirects=`;
     console.log(url);
     fetch(url)
       .then((resp) => {
@@ -209,6 +209,7 @@ function searchBtnEvent() {
         console.log(string);
         console.log(theCity);
 
+        // Put the destination info into "destination-info" div.
         destinationInfo.textContent = aboutCity;
       });
   });
