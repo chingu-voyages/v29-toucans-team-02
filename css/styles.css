@@ -271,7 +271,7 @@ mediawiki
 }
 
 .mediawiki {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   background: #f2f2f2;
   height: 38vh;
   overflow-y: scroll;
@@ -285,7 +285,7 @@ Google Map Styling
 */
 
 .google-map {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   margin-bottom: 1.5rem;
 }
 
