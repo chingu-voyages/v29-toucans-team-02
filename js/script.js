@@ -141,31 +141,45 @@ getDestinationFromList(setOfRandomNumbers);
 const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
 const API_USERID = 'EIT7ZL9V'
 
-fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=10&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
-    .then(response => response.json())
-    .then(data => console.log(data)) 
+//fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=10&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
+    //.then(response => response.json())
+    //.then(data => console.log(data)) 
 
-/* Weather area starts here */
+// Weather area starts here
 
 const API_KEY = "d433654d6df58b84a62ed36684155d0e";
 
-fetch("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=current,minutely,hourly,alerts&units=metric&appid=d433654d6df58b84a62ed36684155d0e")
-    .then(response => response.json())
-    .then(data => console.log(data));
 
+// Call the API to convert the city and country name to coordinates
+function fecthCoords(city) {
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},&limit=2&appid=${API_KEY}`)
+    .then((response) => response.json())
+    .then((data) => this.displayCoords(data));
+}
+
+// Pulls the coordinates from the above API response and calls the next weather forecast API 
+function displayCoords(data) {
+    console.log(data)
+    const {lon} = data[0]
+    const {lat} = data[0]
+    let API_URL_AND_COORDS = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`
+    fetchWeather(API_URL_AND_COORDS);
+}
+
+// Weather forecast api
 function fetchWeather(api_url) {
     fetch(api_url)
     .then((response) => response.json())
     .then((data) => this.displayWeather(data)); 
 }
-
+ // this gets the weekday for us from the API response
 function weekday(unixDate) {
     let milliseconds = unixDate * 1000
     let dateObject = new Date(milliseconds)
     let humanDateFormat = dateObject.toLocaleString()
     return dateObject.toLocaleString("en-US", {weekday: "short"}).toUpperCase()
 }
-
+ // this gets the date for the week forcasted from the API response
 function date(unixDate) {
     let milliseconds = unixDate * 1000
     let dateObject = new Date(milliseconds)
@@ -173,6 +187,7 @@ function date(unixDate) {
     return dateObject.toLocaleString("en-US", {day: "numeric"})
 }
 
+// Displays each days weather 
 function displayWeather(data) {
     document.querySelector("#day0").innerText = weekday(data.daily[0].dt)
     document.querySelector("#date0").innerText = date(data.daily[0].dt)
@@ -211,26 +226,5 @@ function displayWeather(data) {
     document.querySelector("#low5").innerText = Math.round(data.daily[4].temp.min) + "°";
 }
 
-console.log(weekday(1619546400));
-console.log(date(1619546400));
 
-console.log(fetchWeather("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=current,minutely,hourly,alerts&units=metric&appid=d433654d6df58b84a62ed36684155d0e"))
-/*let weather = {
-    fetchWeather: function (api_url) {
-        fetch(api_url)
-        .then((response) => response.json())
-        .then((data) => this.displayWeather(data));
-    },
-    displayWeather: function (data) {
-        const {icon, description} = data.weather[0];
-        const {temp} = data.main;
-        const {country} = data.sys;
-        console.log(icon, description, temp);
-        document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-        document.querySelector("#conditions").innerText = description;
-        document.querySelector("#temp").innerText = Math.round(temp) + " °C";
-    },
-    searchWeather: function () {
-        this.fetchWeather("http://api.openweathermap.org/data/2.5/weather?q=" + document.querySelector("#sbox").value + "&units=metric&appid=" + API_KEY);
-    },
-};*/
+console.log(fecthCoords('madrid'))
