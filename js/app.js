@@ -180,6 +180,10 @@ function searchBtnEvent() {
 
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
+
+    // Call weather API functions
+    fecthCoords(destiny);
+
   });
 }
 
