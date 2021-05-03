@@ -175,6 +175,7 @@ function searchBtnEvent() {
     destiny = res[0];
     country = res[res.length - 1];
     newCountry = country.slice(1, country.length);
+    state = res[1];
     console.log("destination: ", destiny);
     console.log("newCountry: ", newCountry);
 
@@ -182,7 +183,7 @@ function searchBtnEvent() {
     destinationName.textContent = `${destiny}, ${newCountry}`;
 
     // Call weather API functions
-    fecthCoords(destiny);
+    fecthCoords(destiny, newCountry, state);
 
   });
 }
