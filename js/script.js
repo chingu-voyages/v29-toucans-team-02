@@ -405,7 +405,7 @@ function getCountryCode (countryName) {
 }
 
 
-// Call the API to convert the city and country name to coordinates
+// Call the API to convert the city and country code to coordinates
 function fecthCoords(city, country, state) {
     let countryCode = getCountryCode(country)
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${countryCode}&appid=${API_KEY}`)
