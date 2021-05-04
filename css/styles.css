@@ -283,9 +283,25 @@ result-page
   margin: 0;
 }
 
+.attractionsBtn{
+  background-color: #214c72;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.attractionsRow {
+  margin: 15px 10px;
+}
+
 .infoScroll {
-  height: 150px;
+  height: 175px;
   margin-bottom: 0 !important;
+}
+
+.infoScroll p {
+  font-size: 17px;
 }
 
 .scrollbar
@@ -299,6 +315,7 @@ result-page
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #F5F5F5;
+  border-radius: 5px;
 }
 
 #style-4::-webkit-scrollbar
@@ -311,4 +328,6 @@ result-page
 {
 	background-color: #000000;
 	border: 2px solid #555555;
+  border-radius: 5px;
 }
+
