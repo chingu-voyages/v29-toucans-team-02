@@ -138,13 +138,6 @@ function getDestinationFromList(setOfRandomNumbers) {
 /* calling function to update destinations*/
 getDestinationFromList(setOfRandomNumbers);
 
-const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
-const API_USERID = 'EIT7ZL9V'
-
-//fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=10&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
-    //.then(response => response.json())
-    //.then(data => console.log(data)) 
-
 // Weather area starts here
 
 const API_KEY = "d433654d6df58b84a62ed36684155d0e";
@@ -418,8 +411,14 @@ function displayCoords(data) {
     console.log(data)
     const {lon} = data[0]
     const {lat} = data[0]
-    let API_URL_AND_COORDS = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`
-    fetchWeather(API_URL_AND_COORDS);
+    let TOP_TRIP_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=topattractions|do&distance=<10000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    let CULTURAL_TRIP_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=architecture|architectural_style|character-World_heritage|culture|forts|markets|museums|person_architect&distance=<10000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    let NATURE_TRIP_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=national_park|island|relaxinapark|zoos|exploringnature|beaches|camping|poitype-Park|hiking|poitype-Lake|wildlife&distance=<10000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    let WEATHER_API_COORDS = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`
+    fetchWeather(WEATHER_API_COORDS);
+    fetchTopAttractions(TOP_TRIP_API_COORDS);
+    fetchNatureAttractions(NATURE_TRIP_API_COORDS);
+    fetchCulturalAttractions(CULTURAL_TRIP_API_COORDS);
 }
 
 // Weather forecast api
@@ -482,3 +481,27 @@ function displayWeather(data) {
     document.querySelector("#low5").innerText = Math.round(data.daily[4].temp.min) + "°";
 }
 
+const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
+const API_USERID = 'EIT7ZL9V'
+
+//fetch('https://www.triposo.com/api/20210317/poi.json?annotate=distance:48.8566,2.3522&tag_labels=sightseeing&distance=<3000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
+    //.then(response => response.json())
+    //.then(data => console.log(data)) 
+
+function fetchTopAttractions(api_url) {
+    fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => console.log(data)); 
+}
+
+function fetchNatureAttractions(api_url) {
+    fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => console.log(data)); 
+}
+
+function fetchCulturalAttractions(api_url) {
+    fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => console.log(data)); 
+}
