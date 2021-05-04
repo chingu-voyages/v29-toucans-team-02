@@ -515,4 +515,13 @@ function displayAttractions(data) {
 
     document.querySelector("#title2").innerText = data.results[2].name; 
     document.querySelector("#info2").innerText = data.results[2].intro; 
+
+    document.querySelector("#title3").innerText = data.results[3].name; 
+    document.querySelector("#info3").innerText = data.results[3].intro; 
+
+    document.querySelector("#title4").innerText = data.results[4].name; 
+    document.querySelector("#info4").innerText = data.results[4].intro; 
+
+    document.querySelector("#title5").innerText = data.results[5].name; 
+    document.querySelector("#info5").innerText = data.results[5].intro; 
 }
