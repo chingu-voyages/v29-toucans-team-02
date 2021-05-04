@@ -491,7 +491,7 @@ const API_USERID = 'EIT7ZL9V'
 function fetchTopAttractions(api_url) {
     fetch(api_url)
     .then((response) => response.json())
-    .then((data) => console.log(data)); 
+    .then((data) => displayAttractions(data)); 
 }
 
 function fetchNatureAttractions(api_url) {
@@ -504,4 +504,15 @@ function fetchCulturalAttractions(api_url) {
     fetch(api_url)
     .then((response) => response.json())
     .then((data) => console.log(data)); 
+}
+
+function displayAttractions(data) {
+    document.querySelector("#title0").innerText = data.results[0].name;
+    document.querySelector("#info0").innerText = data.results[0].intro;
+
+    document.querySelector("#title1").innerText = data.results[1].name;
+    document.querySelector("#info1").innerText = data.results[1].intro; 
+
+    document.querySelector("#title2").innerText = data.results[2].name; 
+    document.querySelector("#info2").innerText = data.results[2].intro; 
 }
