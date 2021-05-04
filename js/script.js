@@ -141,9 +141,9 @@ getDestinationFromList(setOfRandomNumbers);
 const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
 const API_USERID = 'EIT7ZL9V'
 
-//fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=10&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
-    //.then(response => response.json())
-    //.then(data => console.log(data)) 
+fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=15&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
+    .then(response => response.json())
+    .then(data => console.log(data)) 
 
 // Weather area starts here
 
@@ -415,7 +415,6 @@ function fecthCoords(city, country, state) {
 
 // Pulls the coordinates from the above API response and calls the next weather forecast API 
 function displayCoords(data) {
-    console.log(data)
     const {lon} = data[0]
     const {lat} = data[0]
     let API_URL_AND_COORDS = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`

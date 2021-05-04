@@ -196,10 +196,6 @@ Recommendation
 ===========
 */
 
-.recommendations {
-  font-family: "Libre Baskerville", serif;
-}
-
 /* background color of recommendation section*/
 .rowStyle {
   background-color: #d7dadd;
@@ -217,7 +213,7 @@ Recommendation
 /* recommendation title */
 .recommendationTitle h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   padding: 30px 0px;
 }
@@ -267,3 +263,4 @@ result-page
 .weather-container {
   max-width: 1172px;
 }
+
