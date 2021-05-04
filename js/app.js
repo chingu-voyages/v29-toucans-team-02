@@ -182,6 +182,9 @@ function searchBtnEvent() {
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
 
+    // Add destination name into the attraction section
+    cityName.textContent = destiny;
+
     // Call weather API functions
     fecthCoords(destiny, newCountry, state);
 
@@ -369,3 +372,6 @@ Main page: city-name
 // select the city-name elements
 const destinationName = document.querySelector(".destination-name");
 console.log(destinationName);
+
+// select the city-name element in the attractions section
+const cityName = document.querySelector(".cityName");
