@@ -416,3 +416,66 @@ Loading Page
 .hide {
   display: none;
 }
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.footer {
+  /* border: 3px solid white; */
+  background: #102a42;
+  color: #fff;
+  text-align: center;
+  padding: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links,
+.footer-icons {
+  /* border: 3px solid white; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.footer-link {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 2rem;
+  letter-spacing: 0.25rem;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: aqua;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 2rem;
+  transition: all 0.3s linear;
+}
+
+.footer-icon:hover {
+  color: aqua;
+}
+
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  color: #fff;
+}
+
+.copyright-company {
+  color: aqua;
+}
