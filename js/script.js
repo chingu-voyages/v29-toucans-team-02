@@ -503,7 +503,7 @@ function fetchFood(api_url) {
 function fetchHotels(api_url) {
     fetch(api_url)
     .then((response) => response.json())
-    .then((data) => dislayHotels(data))
+    .then((data) => console.log(data))
 }
 
 //topAttBtn.addEventListener("click", displayAttractions(pleaseWork));
@@ -550,26 +550,27 @@ function displayAttractions(data) {
 }
 
 function displayRestaurants(data) {
-    document.querySelector("#foodTitle0").innerText = data.results[0].name;
-    document.querySelector("#foodInfo0").innerText = data.results[0].intro;
+    console.log(data)
+    // document.querySelector("#foodTitle0").innerText = data.results[0].name;
+    // document.querySelector("#foodInfo0").innerText = data.results[0].intro;
 
-    document.querySelector("#foodTitle1").innerText = data.results[1].name;
-    document.querySelector("#foodInfo1").innerText = data.results[1].intro; 
+    // document.querySelector("#foodTitle1").innerText = data.results[1].name;
+    // document.querySelector("#foodInfo1").innerText = data.results[1].intro; 
 
-    document.querySelector("#foodTitle2").innerText = data.results[2].name; 
-    document.querySelector("#foodInfo2").innerText = data.results[2].intro; 
+    // document.querySelector("#foodTitle2").innerText = data.results[2].name; 
+    // document.querySelector("#foodInfo2").innerText = data.results[2].intro; 
 
-    document.querySelector("#foodTitle3").innerText = data.results[3].name; 
-    document.querySelector("#foodInfo3").innerText = data.results[3].intro; 
+    // document.querySelector("#foodTitle3").innerText = data.results[3].name; 
+    // document.querySelector("#foodInfo3").innerText = data.results[3].intro; 
 
-    document.querySelector("#foodTitle4").innerText = data.results[4].name; 
-    document.querySelector("#foodInfo4").innerText = data.results[4].intro; 
+    // document.querySelector("#foodTitle4").innerText = data.results[4].name; 
+    // document.querySelector("#foodInfo4").innerText = data.results[4].intro; 
 
-    document.querySelector("#foodTitle5").innerText = data.results[5].name; 
-    document.querySelector("#foodInfo5").innerText = data.results[5].intro; 
+    // document.querySelector("#foodTitle5").innerText = data.results[5].name; 
+    // document.querySelector("#foodInfo5").innerText = data.results[5].intro; 
 
-    document.querySelector("#foodTitle6").innerText = data.results[6].name; 
-    document.querySelector("#foodInfo6").innerText = data.results[6].intro;
+    // document.querySelector("#foodTitle6").innerText = data.results[6].name; 
+    // document.querySelector("#foodInfo6").innerText = data.results[6].intro;
 }
 
 
