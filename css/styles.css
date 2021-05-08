@@ -267,14 +267,16 @@ result-page
 /* Attractions section */
 
 .attractions,
-.food {
+.food,
+.hotels {
   max-width: 1172px;
   margin: 20px auto;
   max-height: 125px;
 }
 
 #attractionsBtn,
-#foodBtn {
+#foodBtn,
+#hotelBtn {
   width: 1172px;
   color: #ffffff;
   font-weight: bold;
@@ -294,13 +296,21 @@ result-page
   background-size: cover;
 }
 
+.hotelArea {
+  background-image: url("../images/cityinfo/pool.jpg");
+  background-position:bottom;
+  background-size: cover;
+}
+
 .attractionsRow,
-.foodRow {
+.foodRow,
+.hotelRow {
   margin: 15px 0px;
 }
 
 .attrCol,
-.foodCol {
+.foodCol,
+.hotelCol {
   padding: 0;
 }
 
@@ -310,19 +320,18 @@ result-page
   background: linear-gradient(to left, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.foodCard {
+.foodCard,
+.hotelCard {
   height: fit-content;
   background: #60677c;
   color: white;
-}
-
-.foodCard {
   font-weight: bold;
-
 }
+
 
 .attractionsCard h5,
-.foodCard h5 {
+.foodCard h5
+.hotelCard h5 {
   color: rgb(255, 255, 255);
 }
 
