@@ -379,15 +379,12 @@
         <!-- End of openweather API -->
 
         <!-- Tour attractions -->
-        <section class="attractions">
-          <h4 class="activityHeader">Things to do in <span class="cityName">City</span></h4>
-          <div class="d-flex justify-content-center mb-3">
-            <button class="btn p-2 m-2 attractionsBtn topAttractionsbtn" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse">Most Popular</button>
-            <button class="btn p-2 m-2 attractionsBtn culturalbtn" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse">Cultural</button>
-            <button class="btn p-2 m-2 attractionsBtn naturebtn" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse">Nature</button>
+        <div class="attractions">
+          <div class="d-flex justify-content-center mb-3 btnarea">
+            <button class="btn p-2 m-2" id="attractionsBtn" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse">Top Attractions</button>
           </div>
           <div class="row attractionsRow">
-            <div class="col">
+            <div class="col attrCol">
               <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                 <div class="card card-body attractionsCard border-0 pt-2">
                   <h5 class="card-title fs-3 mb-2 fw-bold" id="title0"></h5>
@@ -399,7 +396,7 @@
             </div> <!--/col-->
           </div> <!--/row-->
           <div class="row attractionsRow">
-            <div class="col">
+            <div class="col attrCol">
               <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                 <div class="card card-body border-0 pt-2 attractionsCard">
                   <h5 class="card-title fs-3 mb-2 fw-bold" id="title1">Auditorio de Tenerife</h5>
@@ -411,7 +408,7 @@
             </div> <!--/col-->
           </div> 
             <div class="row attractionsRow">
-              <div class="col">
+              <div class="col attrCol">
                 <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                   <div class="card card-body border-0 pt-2 attractionsCard">
                     <h5 class="card-title fs-3 mb-2 fw-bold" id="title2">Loro Parque</h5>
@@ -423,7 +420,7 @@
               </div> <!--/col-->
             </div> <!--/row-->
             <div class="row attractionsRow">
-              <div class="col">
+              <div class="col attrCol">
                 <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                   <div class="card card-body attractionsCard border-0 pt-2">
                     <h5 class="card-title fs-3 mb-2 fw-bold" id="title3"></h5>
@@ -435,7 +432,7 @@
               </div> <!--/col-->
             </div> <!--/row-->
             <div class="row attractionsRow">
-              <div class="col">
+              <div class="col attrCol">
                 <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                   <div class="card card-body attractionsCard border-0 pt-2">
                     <h5 class="card-title fs-3 mb-2 fw-bold" id="title4"></h5>
@@ -447,7 +444,7 @@
               </div> <!--/col-->
             </div> <!--/row-->
             <div class="row attractionsRow">
-              <div class="col">
+              <div class="col attrCol">
                 <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                   <div class="card card-body attractionsCard border-0 pt-2">
                     <h5 class="card-title fs-3 mb-2 fw-bold" id="title5"></h5>
@@ -459,7 +456,7 @@
               </div> <!--/col-->
             </div> <!--/row-->
             <div class="row attractionsRow">
-              <div class="col">
+              <div class="col attrCol">
                 <div class="collapse multi-collapse border-bottom" id="multiCollapse">
                   <div class="card card-body attractionsCard border-0 pt-2">
                     <h5 class="card-title fs-3 mb-2 fw-bold" id="title6"></h5>
@@ -470,11 +467,99 @@
                 </div>
               </div> <!--/col-->
             </div> <!--/row-->
-        </section>
+          </div>
         <!-- End of Tour attractions -->
 
         <!-- Restaurants  -->
-
+        <div class="food">
+          <div class="d-flex justify-content-center mb-3 foodArea">
+            <button class="btn p-2 m-2" id="foodBtn" data-bs-toggle="collapse" data-bs-target=".food-collapse" aria-expanded="false" aria-controls="multiCollapse">Best Restaurants</button>
+          </div>
+          <div class="row foodRow">
+            <div class="col foodCol">
+              <div class="collapse food-collapse" id="multiCollapse">
+                <div class="card card-body foodCard border-0 pt-2">
+                  <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle0">fghfghgfhfg</h5>
+                  <div class="rounded" id="style-4">
+                    <p id="foodInfo0" class="mb-0 p-2"></p>
+                  </div>
+                </div>
+              </div>
+            </div> <!--/col-->
+          </div> <!--/row-->
+          <div class="row foodRow">
+            <div class="col foodCol">
+              <div class="collapse food-collapse" id="multiCollapse">
+                <div class="card card-body border-0 pt-2 foodCard">
+                  <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle1">Auditorio de Tenerife</h5>
+                  <div class="rounded" id="style-4">
+                    <p id="foodInfo1" class="mb-0 p-2"></p>
+                  </div>
+                </div>
+              </div>
+            </div> <!--/col-->
+          </div> 
+            <div class="row foodRow">
+              <div class="col foodCol">
+                <div class="collapse food-collapse" id="multiCollapse">
+                  <div class="card card-body border-0 pt-2 foodCard">
+                    <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle2">Loro Parque</h5>
+                    <div class="rounded" id="style-4">
+                      <p id="foodInfo2" class="mb-0 p-2"></p>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--/col-->
+            </div> <!--/row-->
+            <div class="row foodRow">
+              <div class="col foodCol">
+                <div class="collapse food-collapse" id="multiCollapse">
+                  <div class="card card-body foodCard border-0 pt-2">
+                    <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle3"></h5>
+                    <div class="rounded" id="style-4">
+                      <p id="foodInfo3" class="mb-0 p-2"></p>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--/col-->
+            </div> <!--/row-->
+            <div class="row foodRow">
+              <div class="col foodCol">
+                <div class="collapse food-collapse" id="multiCollapse">
+                  <div class="card card-body foodCard border-0 pt-2">
+                    <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle4"></h5>
+                    <div class="rounded" id="style-4">
+                      <p id="foodInfo4" class="mb-0 p-2"></p>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--/col-->
+            </div> <!--/row-->
+            <div class="row foodRow">
+              <div class="col foodCol">
+                <div class="collapse food-collapse" id="multiCollapse">
+                  <div class="card card-body foodCard border-0 pt-2">
+                    <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle5"></h5>
+                    <div class="rounded" id="style-4">
+                      <p id="foodInfo5" class="mb-0 p-2"></p>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--/col-->
+            </div> <!--/row-->
+            <div class="row foodRow">
+              <div class="col foodCol">
+                <div class="collapse food-collapse" id="multiCollapse">
+                  <div class="card card-body foodCard border-0 pt-2">
+                    <h5 class="card-title fs-3 mb-2 fw-bold" id="foodTitle6"></h5>
+                    <div class="rounded" id="style-4">
+                      <p id="foodInfo6" class="mb-0 p-2"></p>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--/col-->
+            </div> <!--/row-->
+          </div>
         <!-- End of restautrants -->
 
         <!-- Hotels -->

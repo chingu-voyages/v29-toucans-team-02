@@ -189,9 +189,6 @@ function searchBtnEvent() {
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
 
-    // Add destination name into the attraction section
-    cityName.textContent = destiny;
-
     // Call weather API functions
     fecthCoords(destiny, newCountry, state);
 
