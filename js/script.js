@@ -1,3 +1,10 @@
+topAttBtn = document.querySelector(".topAttractionsbtn");
+
+culturalBtn = document.querySelector(".culturalbtn");
+
+natureBtn = document.querySelector(".naturebtn");
+
+
 /* Recommendation area starts here*/
 
 const recommendedDestinations = [
@@ -397,7 +404,6 @@ function getCountryCode (countryName) {
     }
 }
 
-
 // Call the API to convert the city and country code to coordinates
 function fecthCoords(city, country, state) {
     let countryCode = getCountryCode(country)
@@ -484,28 +490,27 @@ function displayWeather(data) {
 const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
 const API_USERID = 'EIT7ZL9V'
 
-//fetch('https://www.triposo.com/api/20210317/poi.json?annotate=distance:48.8566,2.3522&tag_labels=sightseeing&distance=<3000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
-    //.then(response => response.json())
-    //.then(data => console.log(data)) 
-
+// provides the top attractions
 function fetchTopAttractions(api_url) {
     fetch(api_url)
     .then((response) => response.json())
     .then((data) => displayAttractions(data)); 
 }
 
+// provides the outdoor attractions
 function fetchNatureAttractions(api_url) {
     fetch(api_url)
     .then((response) => response.json())
     .then((data) => console.log(data)); 
 }
-
+// provides the cultural attractions
 function fetchCulturalAttractions(api_url) {
     fetch(api_url)
     .then((response) => response.json())
     .then((data) => console.log(data)); 
 }
 
+// Displays attractions from the API
 function displayAttractions(data) {
     document.querySelector("#title0").innerText = data.results[0].name;
     document.querySelector("#info0").innerText = data.results[0].intro;
@@ -524,4 +529,12 @@ function displayAttractions(data) {
 
     document.querySelector("#title5").innerText = data.results[5].name; 
     document.querySelector("#info5").innerText = data.results[5].intro; 
+
+    document.querySelector("#title6").innerText = data.results[6].name; 
+    document.querySelector("#info6").innerText = data.results[6].intro;
 }
+
+//document.querySelector(".culturalbtn").addEventListener("click", function(){
+    //fetchCulturalAttractions();
+//})
+  
