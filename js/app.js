@@ -32,6 +32,9 @@ let destiny;
 // Create a destiny country
 let country;
 
+// Loading Page Element
+const loading = document.querySelector(".loading");
+
 /*
 =============
 Background Media Queries
@@ -165,8 +168,12 @@ function searchBtnEvent() {
     // Hide Main Page
     mainPage.classList.add("hide");
 
-    // Show Result Page
-    resultPage.classList.remove("hide");
+    // Show Loading page and then Result page
+    loading.classList.remove("hide");
+    setTimeout(function () {
+      resultPage.classList.remove("hide");
+      loading.classList.add("hide");
+    }, 2000);
 
     console.log("clicked");
     // console.log(input);

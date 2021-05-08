@@ -116,6 +116,31 @@
         </section>
         <!-- end of Search Section -->
 
+        <!-- Covid Map -->
+        <section class="covid">
+          <div class="covid-map-container">
+            <div class="covid-map-image">
+              <img src="./images/covid-map.png" alt="" class="covid-map-img" />
+            </div>
+            <div class="covid-map-text">
+              <h1>Get the COVID-19 Travel Info You Need</h1>
+              <h4>
+                Plan your next trip with confidence – get the latest entry
+                requirements and quarantine info.
+              </h4>
+              <div class="anchor">
+                <a
+                  href="https://covid-19.riskline.com/embedded/maps/world"
+                  class="covid-anchor"
+                  target="_blank"
+                  ><input type="button" value="View Live Map" class="covid-btn"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end of Covid map -->
+
         <!-- Recommendation Section -->
         <section class="recommendations">
           <div class="recommendations-container container ps-4 pe-4">
@@ -252,6 +277,16 @@
       </div>
       <!-- end of main-page -->
 
+      <!-- loading page -->
+      <div class="hide loading preload">
+        <img src="./images/airplane.png" alt="" class="plane" />
+        <h3>Landing on the website...</h3>
+        <img src="./images/cloud.png" alt="" class="cloud1" />
+        <img src="./images/cloud.png" alt="" class="cloud2" />
+        <img src="./images/cloud.png" alt="" class="cloud3" />
+      </div>
+      <!-- end of loading page -->
+
       <!-- result page -->
       <div id="result-page" class="hide">
         <div class="destination-title">
@@ -365,7 +400,11 @@
 
     <!-- google map API -->
     <script
+<<<<<<< HEAD
       src="https://maps.googleapis.com/maps/api/js?libraries=places&key=&callback=initMap"
+=======
+      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBaTKsWYwzK3s7CjVKXMjQ4EEUuCAaThI0&callback=initMap"
+>>>>>>> f8c857fa4f93e11a26e811502aa004bcc73c166e
       async
       defer
     ></script>
