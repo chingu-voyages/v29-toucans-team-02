@@ -186,19 +186,11 @@ Google Map Styling
   margin: 0 auto;
 }
 
-.hide {
-  display: none;
-}
-
 /*
 ===========
 Recommendation
 ===========
 */
-
-.recommendations {
-  font-family: "Libre Baskerville", serif;
-}
 
 /* background color of recommendation section*/
 .rowStyle {
@@ -217,7 +209,7 @@ Recommendation
 /* recommendation title */
 .recommendationTitle h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   padding: 30px 0px;
 }
@@ -260,4 +252,233 @@ result-page
   max-width: 1172px;
   margin: 0 auto;
   /* border: 3px solid red; */
+}
+
+/* Weather Section */
+
+.weather-container {
+  max-width: 1172px;
+  margin: 20px 0px;
+}
+
+/* 
+===============
+COVID MAP
+===============
+*/
+
+.covid {
+  margin: 1rem 0;
+}
+
+.covid-map-container {
+  margin: 0.5rem;
+  background: #f1f2f8;
+}
+
+.covid-map-img {
+  display: block;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.covid-map-text h1 {
+  margin: 1rem auto;
+}
+
+.covid-anchor {
+  text-decoration: none;
+}
+
+.covid-btn {
+  border: none;
+  display: block;
+  margin: 1rem auto;
+  background: green;
+  width: 100%;
+  padding: 0.7rem 0;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.covid-btn:hover {
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 789px) {
+  .covid-map-container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1172px;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
+  .covid-map-image {
+    flex: 1 0 calc(50% - 1rem);
+  }
+  .covid-map-text {
+    flex: 1 0 calc(50% - 1rem);
+  }
+  .covid-map-text h1 {
+    margin: 2rem 0;
+    font-size: 3rem;
+    margin-left: 1rem;
+  }
+  .covid-map-text h4 {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    margin-left: 1rem;
+  }
+  .covid-btn {
+    margin-left: 1rem;
+    width: 90%;
+  }
+}
+
+/* 
+===========
+Loading Page
+===========
+*/
+.preload {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #77b3d4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud1,
+.cloud2,
+.cloud3 {
+  height: 6rem;
+  position: absolute;
+  right: 0%;
+  z-index: -1;
+}
+
+.cloud1 {
+  top: 25%;
+  transform: translate(100%, -25%);
+  animation: clouds 3s ease infinite;
+}
+
+.cloud2 {
+  top: 50%;
+  transform: translate(100%, -50%);
+  animation: clouds 3s ease infinite 2s;
+}
+
+.cloud3 {
+  top: 75%;
+  transform: translate(100%, -75%);
+  animation: clouds 3s ease infinite 1s;
+}
+
+.plane {
+  width: 13rem;
+  animation: plane 1s ease infinite alternate;
+}
+
+.preload h3 {
+  position: absolute;
+  top: 75%;
+  transform: translateY(-75%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+@keyframes plane {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(3rem);
+  }
+}
+
+@keyframes clouds {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 130%;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.footer {
+  /* border: 3px solid white; */
+  background: #102a42;
+  color: #fff;
+  text-align: center;
+  padding: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links,
+.footer-icons {
+  /* border: 3px solid white; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.footer-link {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  letter-spacing: 0.25rem;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: aqua;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 2rem;
+  transition: all 0.3s linear;
+}
+
+.footer-icon:hover {
+  color: aqua;
+}
+
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  color: #fff;
+}
+
+.copyright-company {
+  color: aqua;
 }

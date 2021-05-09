@@ -32,6 +32,9 @@ let destiny;
 // Create a destiny country
 let country;
 
+// Loading Page Element
+const loading = document.querySelector(".loading");
+
 /*
 =============
 Background Media Queries
@@ -165,8 +168,12 @@ function searchBtnEvent() {
     // Hide Main Page
     mainPage.classList.add("hide");
 
-    // Show Result Page
-    resultPage.classList.remove("hide");
+    // Show Loading page and then Result page
+    loading.classList.remove("hide");
+    setTimeout(function () {
+      resultPage.classList.remove("hide");
+      loading.classList.add("hide");
+    }, 2000);
 
     console.log("clicked");
     // console.log(input);
@@ -175,11 +182,16 @@ function searchBtnEvent() {
     destiny = res[0];
     country = res[res.length - 1];
     newCountry = country.slice(1, country.length);
+    state = res[1];
     console.log("destination: ", destiny);
     console.log("newCountry: ", newCountry);
 
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
+
+    // Call weather API functions
+    fecthCoords(destiny, newCountry, state);
+
   });
 }
 
