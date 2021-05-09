@@ -29,7 +29,7 @@
   <body>
     <!-- header -->
     <header>
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light" id="home">
         <div class="container-fluid nb p-0">
           <!-- Brand -->
           <a class="navbar-brand fw-bold fs-2 nav-logo text-main" href="#">
@@ -394,17 +394,68 @@
     </main>
     <!-- end of main -->
 
+    <!-- footer -->
+    <section class="section footer">
+      <!-- footer links -->
+      <ul class="footer-links">
+        <!-- single link -->
+        <li>
+          <a href="#home" class="footer-link scroll-link">Home</a>
+        </li>
+        <!-- end of single link -->
+        <!-- single link -->
+        <li>
+          <a href="#about" class="footer-link scroll-link">About</a>
+        </li>
+        <!-- end of single link -->
+        <!-- single link -->
+        <li>
+          <a href="#services" class="footer-link scroll-link">Contact</a>
+        </li>
+        <!-- end of single link -->
+      </ul>
+      <!-- end of footer link -->
+
+      <!-- footer icons -->
+      <ul class="footer-icons">
+        <!-- single icon -->
+        <li>
+          <a href="https://facebook.com" class="footer-icon" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </li>
+        <!-- end of single icon -->
+        <!-- single icon -->
+        <li>
+          <a href="https://twitter.com" class="footer-icon" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <!-- end of single icon -->
+        <!-- single icon -->
+        <li>
+          <a href="https://squarespace.com" class="footer-icon" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+        <!-- end of single icon -->
+      </ul>
+      <!-- end of footer icons -->
+      <p class="copyright">
+        copyright &copy;
+        <span class="copyright-company">Wiki Trips</span> Company
+        <span id="date"></span>. All rights reserved.
+      </p>
+    </section>
+    <!-- end of footer -->
+
     <!-- External javascript -->
     <script src="./js/app.js"></script>
     <script src="./js/script.js"></script>
 
     <!-- google map API -->
     <script
-<<<<<<< HEAD
-      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=&callback=initMap"
-=======
       src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBaTKsWYwzK3s7CjVKXMjQ4EEUuCAaThI0&callback=initMap"
->>>>>>> f8c857fa4f93e11a26e811502aa004bcc73c166e
       async
       defer
     ></script>
