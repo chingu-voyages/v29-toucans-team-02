@@ -192,10 +192,6 @@ Recommendation
 ===========
 */
 
-.recommendations {
-  font-family: "Libre Baskerville", serif;
-}
-
 /* background color of recommendation section*/
 .rowStyle {
   background-color: #d7dadd;
@@ -213,7 +209,7 @@ Recommendation
 /* recommendation title */
 .recommendationTitle h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   padding: 30px 0px;
 }
@@ -258,6 +254,15 @@ result-page
   /* border: 3px solid red; */
 }
 
+<<<<<<< HEAD
+/* Weather Section */
+
+.weather-container {
+  max-width: 1172px;
+  margin: 20px 0px;
+}
+
+=======
 /* 
 ===============
 COVID MAP
@@ -416,3 +421,4 @@ Loading Page
 .hide {
   display: none;
 }
+>>>>>>> f8c857fa4f93e11a26e811502aa004bcc73c166e
