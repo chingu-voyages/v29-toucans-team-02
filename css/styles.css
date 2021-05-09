@@ -447,9 +447,9 @@ Footer
 .footer-link {
   color: #fff;
   text-transform: capitalize;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin-right: 2rem;
+  margin-right: 1rem;
   letter-spacing: 0.25rem;
   transition: all 0.3s linear;
   text-decoration: none;
