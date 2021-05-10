@@ -185,10 +185,6 @@ Recommendation
 ===========
 */
 
-.recommendations {
-  font-family: "Libre Baskerville", serif;
-}
-
 /* background color of recommendation section*/
 .rowStyle {
   background-color: #d7dadd;
@@ -206,7 +202,7 @@ Recommendation
 /* recommendation title */
 .recommendationTitle h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   padding: 30px 0px;
 }
@@ -249,6 +245,13 @@ result-page
   max-width: 1172px;
   margin: 0 auto;
   /* border: 3px solid red; */
+}
+
+/* Weather Section */
+
+.weather-container {
+  max-width: 1172px;
+  margin: 20px 0px;
 }
 
 /* 
@@ -471,4 +474,67 @@ Loading Page
 
 .hide {
   display: none;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.footer {
+  /* border: 3px solid white; */
+  background: #102a42;
+  color: #fff;
+  text-align: center;
+  padding: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links,
+.footer-icons {
+  /* border: 3px solid white; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.footer-link {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  letter-spacing: 0.25rem;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: aqua;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 2rem;
+  transition: all 0.3s linear;
+}
+
+.footer-icon:hover {
+  color: aqua;
+}
+
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  color: #fff;
+}
+
+.copyright-company {
+  color: aqua;
 }
