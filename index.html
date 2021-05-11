@@ -289,16 +289,28 @@
 
       <!-- result page -->
       <div id="result-page" class="hide">
+        <!-- Destination Title -->
         <div class="destination-title">
-          <h1 class="destination-name"></h1>
+          <h1 class="destination-name">HI</h1>
         </div>
-        <!-- wikipedia section -->
 
-        <!-- end of wikipedia section -->
+        <!-- Wikipedia and Gmap container -->
+        <div class="wiki-gmap-container">
+          <!-- wikipedia section -->
+          <div class="mediawiki">
+            <p class="mediawiki-destination">
+              <span class="mediawiki-city"></span>
+              <span class="mediawiki-city-rest"></span>
+            </p>
+          </div>
+          <!-- end of wikipedia section -->
 
-        <!-- Google map -->
-        <div id="map"></div>
-        <!-- end of google map -->
+          <!-- Google map -->
+          <div class="google-map">
+            <div id="map"></div>
+          </div>
+          <!-- end of google map -->
+        </div>
 
         <!-- Unsplash API -->
 
@@ -455,7 +467,7 @@
 
     <!-- google map API -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBaTKsWYwzK3s7CjVKXMjQ4EEUuCAaThI0&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=callback=initMap"
       async
       defer
     ></script>
