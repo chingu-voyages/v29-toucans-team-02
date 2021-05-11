@@ -319,27 +319,21 @@ result-page
   padding: 0;
 }
 
-.attractionsCard {
+.attractionsCard,
+.foodCard,
+.hotelCard {
   background: #102a42; 
 }
 
-.foodCard,
-.hotelCard {
-  height: fit-content;
-  background: #102a42;
-  color: white;
-  font-weight: bold;
-}
-
-
 .attractionsCard h5,
-.foodCard h5
+.foodCard h5,
 .hotelCard h5 {
   color: rgb(255, 255, 255);
 }
 
 .infoScroll {
-  height: 175px;
+  max-height: 175px;
+  height: fit-content;
   margin-bottom: 0 !important;
 }
 
