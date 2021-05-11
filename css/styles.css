@@ -270,9 +270,10 @@ result-page
 .food,
 .hotels {
   max-width: 1172px;
-  margin: 20px auto;
-  max-height: 125px;
+  margin: 0px auto;
+  min-height: 125px;
   padding: 0px 10px;
+  overflow:auto;
 }
 
 #attractionsBtn,
@@ -289,24 +290,27 @@ result-page
   background-image: url("../images/cityinfo/zip.jpg");
   background-position:center;
   background-size: cover;
+  margin-bottom: 5px;
 }
 
 .foodArea {
   background-image: url("../images/cityinfo/food1.jpg");
   background-position:bottom;
   background-size: cover;
+  margin-bottom: 5px;
 }
 
 .hotelArea {
   background-image: url("../images/cityinfo/pool.jpg");
   background-position:bottom;
   background-size: cover;
+  margin-bottom: 5px;
 }
 
 .attractionsRow,
 .foodRow,
 .hotelRow {
-  margin: 15px 0px;
+  margin: 0px 0px 5px 0px;
 }
 
 .attrCol,
@@ -316,15 +320,13 @@ result-page
 }
 
 .attractionsCard {
-  background: #757F9A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #102a42; 
 }
 
 .foodCard,
 .hotelCard {
   height: fit-content;
-  background: #60677c;
+  background: #102a42;
   color: white;
   font-weight: bold;
 }
@@ -349,7 +351,7 @@ result-page
 .scrollbar
 {
 	float: left;
-	background: #f3f7fd;
+	background: #f0f0f0;
 	overflow-y: scroll;
 }
 
