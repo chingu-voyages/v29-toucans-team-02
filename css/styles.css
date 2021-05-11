@@ -1,5 +1,11 @@
-/* customer toggler */
+/* 
+==========
+Google Font
+==========
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
+/* customer toggler */
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,41,107, 0.8)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -29,6 +35,10 @@ Main section
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Noto Sans JP", sans-serif;
 }
 
 /* 
@@ -262,6 +272,7 @@ Destination title
 
 .destination-title {
   margin: 1rem;
+  font-family: var(--font-family);
 }
 
 /* 
@@ -271,7 +282,6 @@ mediawiki
 */
 
 .wiki-gmap-container {
-  border: 3px solid aqua;
   margin: 1rem;
 }
 
@@ -281,6 +291,23 @@ mediawiki
   height: 38vh;
   overflow-y: scroll;
   margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.mediawiki-destination {
+  font-family: var(--font-family);
+  font-size: 1.3rem;
+}
+
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 992px) {
+  .mediawiki-destination {
+    font-size: 1.5rem;
+  }
 }
 
 /*

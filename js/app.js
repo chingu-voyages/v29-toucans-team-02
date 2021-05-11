@@ -206,19 +206,36 @@ function searchBtnEvent() {
         console.log(pageId);
 
         let aboutPage = page[pageId];
-        console.log(aboutPage);
+        // console.log(aboutPage);
 
+        // City Information in String
         let aboutCity = aboutPage.extract;
         console.log(aboutCity);
         console.log(typeof aboutCity);
 
-        let string = aboutCity.split("(");
-        let theCity = string[0];
-        console.log(string);
-        console.log(theCity);
+        // Split the the city information
+        let string = aboutCity.split(" (");
 
-        // Put the destination info into "destination-info" div.
-        destinationInfo.textContent = aboutCity;
+        // Get the City name
+        let theCity = string[0];
+
+        // Get the Rest city name
+        let restCity = string.slice(1, string.length);
+        let restCity2 = [];
+
+        for (let i = 0; i < string.length - 1; i++) {
+          let pushh = [restCity[i]];
+          pushh.unshift("(");
+
+          let makeStr = pushh.join(" ");
+          restCity2.push(makeStr);
+        }
+        let theRest = restCity2.toString();
+
+        // Put the city name and description into HTML
+        destinationCity.textContent = theCity;
+        destinationCity.classList.add("bold");
+        destinationCityRest.textContent = theRest;
       });
     // Call weather API functions
     fecthCoords(destiny, newCountry, state);
@@ -409,3 +426,5 @@ console.log(destinationName);
 
 // select mediawiki destination
 const destinationInfo = document.querySelector(".mediawiki-destination");
+const destinationCity = document.querySelector(".mediawiki-city");
+const destinationCityRest = document.querySelector(".mediawiki-city-rest");
