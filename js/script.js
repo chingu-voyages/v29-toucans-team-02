@@ -139,16 +139,6 @@ function getDestinationFromList(setOfRandomNumbers) {
 /* calling function to update destinations*/
 getDestinationFromList(setOfRandomNumbers);
 
-<<<<<<< HEAD
-=======
-const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
-const API_USERID = 'EIT7ZL9V'
-
-fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=15&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
-    .then(response => response.json())
-    .then(data => console.log(data)) 
-
->>>>>>> a372fa56212090c20704212d93d14a6f2ca0384c
 // Weather area starts here
 
 const API_KEY = "d433654d6df58b84a62ed36684155d0e";
