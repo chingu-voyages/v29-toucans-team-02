@@ -272,6 +272,7 @@ result-page
   max-width: 1172px;
   margin: 20px auto;
   max-height: 125px;
+  padding: 0px 10px;
 }
 
 #attractionsBtn,
