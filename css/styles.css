@@ -283,7 +283,10 @@ result-page
   color: #ffffff;
   font-weight: bold;
   font-size: 50px;
-  border: none;
+}
+/* Quick fix to get rid of weird border on buttons. Will come back to this*/
+.btn-check:focus + .btn, .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(122, 151, 26, 0);
 }
 
 .btnarea {
