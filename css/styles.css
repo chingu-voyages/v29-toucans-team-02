@@ -1,5 +1,11 @@
-/* customer toggler */
+/* 
+==========
+Google Font
+==========
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
+/* customer toggler */
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,41,107, 0.8)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -29,6 +35,10 @@ Main section
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Noto Sans JP", sans-serif;
 }
 
 /* 
@@ -179,22 +189,11 @@ Google Map Styling
 =============
 */
 
-#map {
-  /* border: 3px solid red; */
-  height: 500px;
-  width: 25vw;
-  margin: 0 auto;
-}
-
 /*
 ===========
 Recommendation
 ===========
 */
-
-.recommendations {
-  font-family: "Libre Baskerville", serif;
-}
 
 /* background color of recommendation section*/
 .rowStyle {
@@ -213,7 +212,7 @@ Recommendation
 /* recommendation title */
 .recommendationTitle h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   padding: 30px 0px;
 }
@@ -262,6 +261,7 @@ result-page
 
 .weather-container {
   max-width: 1172px;
+  margin: 20px 0px;
 }
 
 /* Attractions section */
@@ -370,9 +370,90 @@ result-page
 	background-color: #000000;
 	border: 2px solid #555555;
   border-radius: 5px;
+  margin: 20px 0px;
 }
 
 /* 
+==============
+Destination title
+==============
+*/
+
+.destination-title {
+  margin: 1rem;
+  font-family: var(--font-family);
+}
+
+/* 
+===========
+mediawiki
+===========
+*/
+
+.wiki-gmap-container {
+  margin: 1rem;
+}
+
+.mediawiki {
+  /* border: 3px solid red; */
+  background: #f2f2f2;
+  height: 38vh;
+  overflow-y: scroll;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.mediawiki-destination {
+  font-family: var(--font-family);
+  font-size: 1.3rem;
+}
+
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 992px) {
+  .mediawiki-destination {
+    font-size: 1.5rem;
+  }
+}
+
+/*
+=============
+Google Map Styling
+=============
+*/
+
+.google-map {
+  /* border: 3px solid blue; */
+  margin-bottom: 1.5rem;
+}
+
+#map {
+  /* border: 3px solid red; */
+  height: 38vh;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .wiki-gmap-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .mediawiki {
+    flex: 1 0 calc(50% - 1rem);
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  .google-map {
+    flex: 1 0 calc(50% - 1rem);
+    margin-bottom: 0;
+  }
+}
+
+/*
 ===============
 COVID MAP
 ===============
@@ -529,4 +610,67 @@ Loading Page
 
 .hide {
   display: none;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.footer {
+  /* border: 3px solid white; */
+  background: #102a42;
+  color: #fff;
+  text-align: center;
+  padding: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links,
+.footer-icons {
+  /* border: 3px solid white; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.footer-link {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  letter-spacing: 0.25rem;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: aqua;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 2rem;
+  transition: all 0.3s linear;
+}
+
+.footer-icon:hover {
+  color: aqua;
+}
+
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  color: #fff;
+}
+
+.copyright-company {
+  color: aqua;
 }
