@@ -173,7 +173,7 @@ function searchBtnEvent() {
     setTimeout(function () {
       resultPage.classList.remove("hide");
       loading.classList.add("hide");
-    }, 2000);
+    }, 3000);
 
     console.log("clicked");
     // console.log(input);
