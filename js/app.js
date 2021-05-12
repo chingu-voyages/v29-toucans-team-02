@@ -156,6 +156,40 @@ function initMap() {
 }
 
 /*
+=============
+preload mediawiki to prevent latency
+=============
+*/
+
+function startMediaWiki() {
+  const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=seoul&redirects=`;
+  console.log(url);
+  fetch(url)
+    .then((resp) => {
+      console.log(resp);
+      return resp.json();
+    })
+    .then((data) => {
+      console.log(data);
+
+      let page = data.query.pages;
+      console.log(page);
+      let pageId = Object.keys(data.query.pages);
+      console.log(pageId);
+
+      let aboutPage = page[pageId];
+      // console.log(aboutPage);
+
+      // City Information in String
+      let aboutCity = aboutPage.extract;
+      console.log(aboutCity);
+      console.log(typeof aboutCity);
+    });
+}
+
+startMediaWiki();
+
+/*
 ============
 Search Button Click Event
 ============
@@ -189,60 +223,71 @@ function searchBtnEvent() {
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
 
-    // Fetch Mediawiki API
-    const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=${destiny}&redirects=`;
-    console.log(url);
-    fetch(url)
-      .then((resp) => {
-        console.log(resp);
-        return resp.json();
-      })
-      .then((data) => {
-        console.log(data);
+    // mediawiki
+    fetchMediaWiki();
 
-        let page = data.query.pages;
-        console.log(page);
-        let pageId = Object.keys(data.query.pages);
-        console.log(pageId);
-
-        let aboutPage = page[pageId];
-        // console.log(aboutPage);
-
-        // City Information in String
-        let aboutCity = aboutPage.extract;
-        console.log(aboutCity);
-        console.log(typeof aboutCity);
-
-        // Split the the city information
-        let string = aboutCity.split(" (");
-
-        // Get the City name
-        let theCity = string[0];
-
-        // Get the Rest city name
-        let restCity = string.slice(1, string.length);
-        let restCity2 = [];
-
-        for (let i = 0; i < string.length - 1; i++) {
-          let pushh = [restCity[i]];
-          pushh.unshift("(");
-
-          let makeStr = pushh.join(" ");
-          restCity2.push(makeStr);
-        }
-        let theRest = restCity2.toString();
-
-        // Put the city name and description into HTML
-        destinationCity.textContent = theCity;
-        destinationCity.classList.add("bold");
-        destinationCityRest.textContent = theRest;
-      });
     // Call weather API functions
     fecthCoords(destiny, newCountry, state);
   });
 }
 
 searchBtnEvent();
+
+/*
+=============
+Fetch Mediawiki API
+=============
+*/
+
+function fetchMediaWiki() {
+  const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=${destiny}&redirects=`;
+  console.log(url);
+  fetch(url)
+    .then((resp) => {
+      console.log(resp);
+      return resp.json();
+    })
+    .then((data) => {
+      console.log(data);
+
+      let page = data.query.pages;
+      console.log(page);
+      let pageId = Object.keys(data.query.pages);
+      console.log(pageId);
+
+      let aboutPage = page[pageId];
+      // console.log(aboutPage);
+
+      // City Information in String
+      let aboutCity = aboutPage.extract;
+      console.log(aboutCity);
+      console.log(typeof aboutCity);
+
+      // Split the the city information
+      let string = aboutCity.split(" (");
+
+      // Get the City name
+      let theCity = string[0];
+
+      // Get the Rest city name
+      let restCity = string.slice(1, string.length);
+      let restCity2 = [];
+
+      for (let i = 0; i < string.length - 1; i++) {
+        let pushh = [restCity[i]];
+        pushh.unshift("(");
+
+        let makeStr = pushh.join(" ");
+        restCity2.push(makeStr);
+      }
+      let theRest = restCity2.toString();
+
+      // Put the city name and description into HTML
+      destinationCity.textContent = theCity;
+      destinationCity.classList.add("bold");
+      destinationCityRest.textContent = theRest;
+    });
+}
 
 /*
 =============
