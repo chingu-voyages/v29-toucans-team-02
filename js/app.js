@@ -156,6 +156,40 @@ function initMap() {
 }
 
 /*
+=============
+preload mediawiki to prevent latency
+=============
+*/
+
+function startMediaWiki() {
+  const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=seoul&redirects=`;
+  console.log(url);
+  fetch(url)
+    .then((resp) => {
+      console.log(resp);
+      return resp.json();
+    })
+    .then((data) => {
+      console.log(data);
+
+      let page = data.query.pages;
+      console.log(page);
+      let pageId = Object.keys(data.query.pages);
+      console.log(pageId);
+
+      let aboutPage = page[pageId];
+      // console.log(aboutPage);
+
+      // City Information in String
+      let aboutCity = aboutPage.extract;
+      console.log(aboutCity);
+      console.log(typeof aboutCity);
+    });
+}
+
+startMediaWiki();
+
+/*
 ============
 Search Button Click Event
 ============
