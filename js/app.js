@@ -224,8 +224,8 @@ function searchBtnEvent() {
     console.log(res);
     destiny = res[0];
     country = res[res.length - 1];
-    newCountry = country.slice(1, country.length);
-    state = res[1];
+    let newCountry = country.slice(1, country.length);
+    let state = res[1];
     console.log("destination: ", destiny);
     console.log("newCountry: ", newCountry);
 
