@@ -69,7 +69,13 @@ Gooogle Map Implement
 =============
 */
 
-function initMap() {
+let gmapKey = "AIzaSyBnBJZDhFZnvrWPOO8MQVW_mr93lrIjB5A";
+var script = document.createElement("script");
+script.src = `https://maps.googleapis.com/maps/api/js?key=${gmapKey}&libraries=places&callback=initMap`;
+script.async = true;
+
+// Attach your callback function to the `window` object
+window.initMap = function () {
   // The location of NYC
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 40.78343, lng: -73.96625 },
@@ -153,7 +159,10 @@ function initMap() {
     );
     infowindow.open(map, marker);
   });
-}
+};
+
+// Append the 'script' element to 'head'
+document.head.appendChild(script);
 
 /*
 =============
