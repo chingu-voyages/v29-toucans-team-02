@@ -424,6 +424,8 @@ Result page
 const destinationName = document.querySelector(".destination-name");
 console.log(destinationName);
 
+// select the city-name element in the attractions section
+const cityName = document.querySelector(".cityName");
 // select mediawiki destination
 const destinationInfo = document.querySelector(".mediawiki-destination");
 const destinationCity = document.querySelector(".mediawiki-city");

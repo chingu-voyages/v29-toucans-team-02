@@ -1,3 +1,4 @@
+
 /* Recommendation area starts here*/
 
 const recommendedDestinations = [
@@ -137,13 +138,6 @@ function getDestinationFromList(setOfRandomNumbers) {
 }
 /* calling function to update destinations*/
 getDestinationFromList(setOfRandomNumbers);
-
-const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
-const API_USERID = 'EIT7ZL9V'
-
-fetch('https://www.triposo.com/api/20210317/poi.json?location_id=Tenerife&tag_labels=sightseeing&count=15&fields=id,name,score,intro,tag_labels,location_id,location_ids&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p')
-    .then(response => response.json())
-    .then(data => console.log(data)) 
 
 // Weather area starts here
 
@@ -404,7 +398,6 @@ function getCountryCode (countryName) {
     }
 }
 
-
 // Call the API to convert the city and country code to coordinates
 function fecthCoords(city, country, state) {
     let countryCode = getCountryCode(country)
@@ -413,19 +406,28 @@ function fecthCoords(city, country, state) {
     .then((data) => displayCoords(data));
 }
 
+
 // Pulls the coordinates from the above API response and calls the next weather forecast API 
 function displayCoords(data) {
     const {lon} = data[0]
     const {lat} = data[0]
-    let API_URL_AND_COORDS = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`
-    fetchWeather(API_URL_AND_COORDS);
+    let TOP_TRIP_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=topattractions|do&distance=<10000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    let RESTAURANT_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=eatingout&count=10&distance=<1000&fields=id,name,score,intro,tag_labels,best_for&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    let HOTEL_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=hotels&count=10&distance=<1000&fields=id,name,score,intro,tag_labels,best_for&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    //let CULTURAL_TRIP_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=architecture|architectural_style|character-World_heritage|culture|forts|markets|museums|person_architect&distance=<10000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    //let NATURE_TRIP_API_COORDS = `https://www.triposo.com/api/20210317/poi.json?annotate=distance:${lat},${lon}&tag_labels=national_park|island|relaxinapark|zoos|exploringnature|beaches|camping|poitype-Park|hiking|poitype-Lake|wildlife&distance=<10000&fields=id,name,score,intro,tag_labels&order_by=-score&account=EIT7ZL9V&token=f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p`
+    let WEATHER_API_COORDS = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${API_KEY}`
+    fetchWeather(WEATHER_API_COORDS);
+    fetchTopAttractions(TOP_TRIP_API_COORDS);
+    fetchFood(RESTAURANT_API_COORDS);
+    fetchHotels(HOTEL_API_COORDS);
 }
 
 // Weather forecast api
 function fetchWeather(api_url) {
     fetch(api_url)
     .then((response) => response.json())
-    .then((data) => this.displayWeather(data)); 
+    .then((data) => displayWeather(data)); 
 }
  // this gets the weekday for us from the API response
 function weekday(unixDate) {
@@ -481,3 +483,119 @@ function displayWeather(data) {
     document.querySelector("#low5").innerText = Math.round(data.daily[4].temp.min) + "°";
 }
 
+const API_TOKEN = 'f8y1ib32vbgtx6u0mewmmn4lcu1ecv6p'
+const API_USERID = 'EIT7ZL9V'
+
+
+// provides the top attractions
+function fetchTopAttractions(api_url) {
+    fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => displayAttractions(data))
+}
+
+function fetchFood(api_url) {
+    fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => displayRestaurants(data))
+}
+
+function fetchHotels(api_url) {
+    fetch(api_url)
+    .then((response) => response.json())
+    .then((data) => displayHotels(data))
+}
+
+//topAttBtn.addEventListener("click", displayAttractions(pleaseWork));
+//culturalBtn.addEventListener("click", showAttr);
+//natureBtn.addEventListener("click", showAttr);
+
+
+// provides the outdoor attractions
+// function fetchNatureAttractions(api_url) {
+//     fetch(api_url)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data)); 
+// }
+// // provides the cultural attractions
+// function fetchCulturalAttractions(api_url) {
+//     fetch(api_url)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data)); 
+// }
+
+// Displays attractions from the API
+function displayAttractions(data) {
+    console.log(data)
+    document.querySelector("#title0").innerText = data.results[0].name;
+    document.querySelector("#info0").innerText = data.results[0].intro;
+
+    document.querySelector("#title1").innerText = data.results[1].name;
+    document.querySelector("#info1").innerText = data.results[1].intro; 
+
+    document.querySelector("#title2").innerText = data.results[2].name; 
+    document.querySelector("#info2").innerText = data.results[2].intro; 
+
+    document.querySelector("#title3").innerText = data.results[3].name; 
+    document.querySelector("#info3").innerText = data.results[3].intro; 
+
+    document.querySelector("#title4").innerText = data.results[4].name; 
+    document.querySelector("#info4").innerText = data.results[4].intro; 
+
+    document.querySelector("#title5").innerText = data.results[5].name; 
+    document.querySelector("#info5").innerText = data.results[5].intro; 
+
+    document.querySelector("#title6").innerText = data.results[6].name; 
+    document.querySelector("#info6").innerText = data.results[6].intro;
+}
+
+function displayRestaurants(data) {
+    console.log(data)
+    document.querySelector("#foodTitle0").innerText = data.results[0].name;
+    document.querySelector("#foodInfo0").innerText = data.results[0].intro;
+
+    document.querySelector("#foodTitle1").innerText = data.results[1].name;
+    document.querySelector("#foodInfo1").innerText = data.results[1].intro; 
+
+    document.querySelector("#foodTitle2").innerText = data.results[2].name; 
+    document.querySelector("#foodInfo2").innerText = data.results[2].intro; 
+
+    document.querySelector("#foodTitle3").innerText = data.results[3].name; 
+    document.querySelector("#foodInfo3").innerText = data.results[3].intro; 
+
+    document.querySelector("#foodTitle4").innerText = data.results[4].name; 
+    document.querySelector("#foodInfo4").innerText = data.results[4].intro; 
+
+    document.querySelector("#foodTitle5").innerText = data.results[5].name; 
+    document.querySelector("#foodInfo5").innerText = data.results[5].intro; 
+
+    document.querySelector("#foodTitle6").innerText = data.results[6].name; 
+    document.querySelector("#foodInfo6").innerText = data.results[6].intro;
+}
+
+function displayHotels(data) {
+    console.log(data)
+    document.querySelector("#hotelTitle0").innerText = data.results[0].name;
+    document.querySelector("#hotelInfo0").innerText = data.results[0].intro;
+
+    document.querySelector("#hotelTitle1").innerText = data.results[1].name;
+    document.querySelector("#hotelInfo1").innerText = data.results[1].intro; 
+
+    document.querySelector("#hotelTitle2").innerText = data.results[2].name; 
+    document.querySelector("#hotelInfo2").innerText = data.results[2].intro; 
+
+    document.querySelector("#hotelTitle3").innerText = data.results[3].name; 
+    document.querySelector("#hotelInfo3").innerText = data.results[3].intro; 
+
+    document.querySelector("#hotelTitle4").innerText = data.results[4].name; 
+    document.querySelector("#hotelInfo4").innerText = data.results[4].intro; 
+
+    document.querySelector("#hotelTitle5").innerText = data.results[5].name; 
+    document.querySelector("#hotelInfo5").innerText = data.results[5].intro; 
+
+    document.querySelector("#hotelTitle6").innerText = data.results[6].name; 
+    document.querySelector("#hotelInfo6").innerText = data.results[6].intro;
+}
+
+
+  

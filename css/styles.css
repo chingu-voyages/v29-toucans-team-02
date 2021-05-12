@@ -264,6 +264,115 @@ result-page
   margin: 20px 0px;
 }
 
+/* Attractions section */
+
+.attractions,
+.food,
+.hotels {
+  max-width: 1172px;
+  margin: 0px auto;
+  min-height: 125px;
+  padding: 0px 10px;
+  overflow:auto;
+}
+
+#attractionsBtn,
+#foodBtn,
+#hotelBtn {
+  width: 1172px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 50px;
+}
+/* Quick fix to get rid of weird border on buttons. Will come back to this*/
+.btn-check:focus + .btn, .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(122, 151, 26, 0);
+}
+
+.btnarea {
+  background-image: url("../images/cityinfo/zip.jpg");
+  background-position:center;
+  background-size: cover;
+  margin-bottom: 5px;
+}
+
+.foodArea {
+  background-image: url("../images/cityinfo/food1.jpg");
+  background-position:bottom;
+  background-size: cover;
+  margin-bottom: 5px;
+}
+
+.hotelArea {
+  background-image: url("../images/cityinfo/pool.jpg");
+  background-position:bottom;
+  background-size: cover;
+  margin-bottom: 5px;
+}
+
+.attractionsRow,
+.foodRow,
+.hotelRow {
+  margin: 0px 0px 5px 0px;
+}
+
+.attrCol,
+.foodCol,
+.hotelCol {
+  padding: 0;
+}
+
+.attractionsCard,
+.foodCard,
+.hotelCard {
+  background: #102a42; 
+}
+
+.attractionsCard h5,
+.foodCard h5,
+.hotelCard h5 {
+  color: rgb(255, 255, 255);
+}
+
+.infoScroll {
+  max-height: 175px;
+  height: fit-content;
+  margin-bottom: 0 !important;
+}
+
+.infoScroll p {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.scrollbar
+{
+	float: left;
+	background: #f0f0f0;
+	overflow-y: scroll;
+}
+
+#style-4::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+#style-4::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+  border-radius: 5px;
+  margin: 20px 0px;
+}
+
 /* 
 ==============
 Destination title
