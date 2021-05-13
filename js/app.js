@@ -58,7 +58,6 @@ function handleTabletChange(e) {
 
 // Random number from 1 - 10 for Random Background Image
 let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber);
 
 // Register event listener
 mediaQuery.addListener(handleTabletChange);
@@ -185,27 +184,18 @@ preload mediawiki to prevent latency
 
 function startMediaWiki() {
   const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=seoul&redirects=`;
-  console.log(url);
   fetch(url)
     .then((resp) => {
-      console.log(resp);
       return resp.json();
     })
     .then((data) => {
-      console.log(data);
-
       let page = data.query.pages;
-      console.log(page);
       let pageId = Object.keys(data.query.pages);
-      console.log(pageId);
-
       let aboutPage = page[pageId];
       // console.log(aboutPage);
 
       // City Information in String
       let aboutCity = aboutPage.extract;
-      console.log(aboutCity);
-      console.log(typeof aboutCity);
     });
 }
 
@@ -219,7 +209,6 @@ Search Button Click Event
 
 searchBtn.addEventListener("click", function (e) {
   function searchBtnEvent() {
-    console.log(e);
     e.preventDefault();
     // Hide Main Page
     mainPage.classList.add("hide");
@@ -231,16 +220,10 @@ searchBtn.addEventListener("click", function (e) {
       loading.classList.add("hide");
     }, 2500);
 
-    console.log("clicked");
-    // console.log(input);
-    // console.log(input.value);
-    console.log(res);
     destiny = res[0];
     country = res[res.length - 1];
     let newCountry = country.slice(1, country.length);
     let state = res[1];
-    console.log("destination: ", destiny);
-    console.log("newCountry: ", newCountry);
 
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
@@ -256,7 +239,6 @@ searchBtn.addEventListener("click", function (e) {
   }
 
   if (input.value === "") {
-    console.log("type a city");
     input.placeholder = "Find a city ";
     alert("Find a city first");
     // input.classList.add("warning");
@@ -273,27 +255,17 @@ Fetch Mediawiki API
 
 function fetchMediaWiki() {
   const url = `https://ancient-refuge-79913.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=${destiny}&redirects=`;
-  console.log(url);
   fetch(url)
     .then((resp) => {
-      console.log(resp);
       return resp.json();
     })
     .then((data) => {
-      console.log(data);
-
       let page = data.query.pages;
-      console.log(page);
       let pageId = Object.keys(data.query.pages);
-      console.log(pageId);
-
       let aboutPage = page[pageId];
-      // console.log(aboutPage);
 
       // City Information in String
       let aboutCity = aboutPage.extract;
-      console.log(aboutCity);
-      console.log(typeof aboutCity);
 
       // Split the the city information
       let string = aboutCity.split(" (");
@@ -337,20 +309,14 @@ function unsplash() {
   ];
   const yes = _0x5886[0];
   const url = `${_0x5886[1]}${yes}${_0x5886[2]}${destiny}${_0x5886[3]}`;
-  console[_0x5886[4]](url);
 
   //   Make a request to API
   fetch(url)
     .then((response) => {
-      console.log(response);
       if (response.ok) return response.json();
       else alert("Wrong url");
     })
     .then((data) => {
-      console.log(data);
-      console.log(data.results);
-      console.log(data.results[0]);
-      console.log(data.results[5].links.html);
       createImagesArray(data);
     });
 }
@@ -486,7 +452,7 @@ function recommendations() {
   function getDestinationFromList(setOfRandomNumbers) {
     const setIter = setOfRandomNumbers[Symbol.iterator]();
     let ObjForCard1 = setIter.next().value;
-    console.log(ObjForCard1);
+    // console.log(ObjForCard1);
     document.getElementById("image1").src =
       recommendedDestinations[ObjForCard1].image;
     document.getElementById("cityName1").innerText =
@@ -494,7 +460,7 @@ function recommendations() {
     document.getElementById("countryName1").innerText =
       recommendedDestinations[ObjForCard1].country;
     let ObjForCard2 = setIter.next().value;
-    console.log(ObjForCard2);
+    // console.log(ObjForCard2);
     document.getElementById("image2").src =
       recommendedDestinations[ObjForCard2].image;
     document.getElementById("cityName2").innerText =
@@ -502,7 +468,7 @@ function recommendations() {
     document.getElementById("countryName2").innerText =
       recommendedDestinations[ObjForCard2].country;
     let ObjForCard3 = setIter.next().value;
-    console.log(ObjForCard3);
+    // console.log(ObjForCard3);
     document.getElementById("image3").src =
       recommendedDestinations[ObjForCard3].image;
     document.getElementById("cityName3").innerText =
@@ -510,7 +476,7 @@ function recommendations() {
     document.getElementById("countryName3").innerText =
       recommendedDestinations[ObjForCard3].country;
     let ObjForCard4 = setIter.next().value;
-    console.log(ObjForCard4);
+    // console.log(ObjForCard4);
     document.getElementById("image4").src =
       recommendedDestinations[ObjForCard4].image;
     document.getElementById("cityName4").innerText =
@@ -518,7 +484,7 @@ function recommendations() {
     document.getElementById("countryName4").innerText =
       recommendedDestinations[ObjForCard4].country;
     let ObjForCard5 = setIter.next().value;
-    console.log(ObjForCard5);
+    // console.log(ObjForCard5);
     document.getElementById("image5").src =
       recommendedDestinations[ObjForCard5].image;
     document.getElementById("cityName5").innerText =
@@ -526,7 +492,7 @@ function recommendations() {
     document.getElementById("countryName5").innerText =
       recommendedDestinations[ObjForCard5].country;
     let ObjForCard6 = setIter.next().value;
-    console.log(ObjForCard6);
+    // console.log(ObjForCard6);
     document.getElementById("image6").src =
       recommendedDestinations[ObjForCard6].image;
     document.getElementById("cityName6").innerText =
@@ -547,7 +513,6 @@ Result page
 
 // select the city-name elements
 const destinationName = document.querySelector(".destination-name");
-console.log(destinationName);
 
 // select the city-name element in the attractions section
 const cityName = document.querySelector(".cityName");
