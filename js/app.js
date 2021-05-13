@@ -69,7 +69,23 @@ Gooogle Map Implement
 =============
 */
 
-function initMap() {
+var _0x11f9 = [
+  "\x41\x49\x7A\x61\x53\x79\x42\x6E\x42\x4A\x5A\x44\x68\x46\x5A\x6E\x76\x72\x57\x50\x4F\x4F\x38\x4D\x51\x56\x57\x5F\x6D\x72\x39\x33\x6C\x72\x49\x6A\x42\x35\x41",
+  "\x73\x63\x72\x69\x70\x74",
+  "\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74",
+  "\x73\x72\x63",
+  "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6D\x61\x70\x73\x2E\x67\x6F\x6F\x67\x6C\x65\x61\x70\x69\x73\x2E\x63\x6F\x6D\x2F\x6D\x61\x70\x73\x2F\x61\x70\x69\x2F\x6A\x73\x3F\x6B\x65\x79\x3D",
+  "\x26\x6C\x69\x62\x72\x61\x72\x69\x65\x73\x3D\x70\x6C\x61\x63\x65\x73\x26\x63\x61\x6C\x6C\x62\x61\x63\x6B\x3D\x69\x6E\x69\x74\x4D\x61\x70",
+  "\x61\x73\x79\x6E\x63",
+];
+
+let gmapKey = _0x11f9[0];
+var script = document[_0x11f9[2]](_0x11f9[1]);
+script[_0x11f9[3]] = `${_0x11f9[4]}${gmapKey}${_0x11f9[5]}`;
+script[_0x11f9[6]] = true;
+
+// Attach your callback function to the `window` object
+window.initMap = function () {
   // The location of NYC
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 40.78343, lng: -73.96625 },
@@ -153,7 +169,10 @@ function initMap() {
     );
     infowindow.open(map, marker);
   });
-}
+};
+
+// Append the 'script' element to 'head'
+document.head.appendChild(script);
 
 /*
 =============
@@ -195,8 +214,8 @@ Search Button Click Event
 ============
 */
 
-function searchBtnEvent() {
-  searchBtn.addEventListener("click", function (e) {
+searchBtn.addEventListener("click", function (e) {
+  function searchBtnEvent() {
     console.log(e);
     e.preventDefault();
     // Hide Main Page
@@ -215,8 +234,8 @@ function searchBtnEvent() {
     console.log(res);
     destiny = res[0];
     country = res[res.length - 1];
-    newCountry = country.slice(1, country.length);
-    state = res[1];
+    let newCountry = country.slice(1, country.length);
+    let state = res[1];
     console.log("destination: ", destiny);
     console.log("newCountry: ", newCountry);
 
@@ -228,10 +247,17 @@ function searchBtnEvent() {
 
     // Call weather API functions
     fecthCoords(destiny, newCountry, state);
-  });
-}
+  }
 
-searchBtnEvent();
+  if (input.value === "") {
+    console.log("type a city");
+    input.placeholder = "Find a city ";
+    alert("Find a city first");
+    // input.classList.add("warning");
+  } else {
+    searchBtnEvent();
+  }
+});
 
 /*
 =============
