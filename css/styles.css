@@ -679,3 +679,47 @@ Footer
 .copyright-company {
   color: aqua;
 }
+
+/* 
+=============
+Unsplash API
+=============
+*/
+
+.unsplash-container {
+  margin: 1rem;
+}
+
+.grid {
+  width: 100%;
+}
+
+.imgg {
+  height: 21rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 789px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+    /* align-items: flex-start; */
+  }
+  .imgg {
+    flex: 1 0 calc(48% - 1rem);
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 1072px) {
+  .imgg {
+    flex: 1 0 calc(33% - 1rem);
+  }
+}

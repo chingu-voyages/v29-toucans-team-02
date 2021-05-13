@@ -35,6 +35,9 @@ let country;
 // Loading Page Element
 const loading = document.querySelector(".loading");
 
+// grid element in Unsplash API
+const list = document.querySelector(".grid");
+
 /*
 =============
 Background Media Queries
@@ -226,7 +229,7 @@ searchBtn.addEventListener("click", function (e) {
     setTimeout(function () {
       resultPage.classList.remove("hide");
       loading.classList.add("hide");
-    }, 2000);
+    }, 2500);
 
     console.log("clicked");
     // console.log(input);
@@ -242,11 +245,14 @@ searchBtn.addEventListener("click", function (e) {
     // Add destinationname into result-page.
     destinationName.textContent = `${destiny}, ${newCountry}`;
 
-    // mediawiki
+    // Call mediawiki API
     fetchMediaWiki();
 
     // Call weather API functions
     fecthCoords(destiny, newCountry, state);
+
+    // Call unplash API
+    unsplash();
   }
 
   if (input.value === "") {
@@ -313,6 +319,54 @@ function fetchMediaWiki() {
       destinationCity.classList.add("bold");
       destinationCityRest.textContent = theRest;
     });
+}
+
+/*
+=============
+Fetch unsplash API
+=============
+*/
+
+function unsplash() {
+  var _0x5886 = [
+    "\x31\x61\x66\x4E\x6A\x43\x62\x36\x55\x37\x5A\x48\x45\x32\x39\x42\x32\x4A\x64\x33\x75\x37\x65\x35\x57\x74\x6E\x6A\x34\x41\x49\x52\x49\x78\x6A\x2D\x65\x76\x33\x36\x77\x69\x4D",
+    "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x75\x6E\x73\x70\x6C\x61\x73\x68\x2E\x63\x6F\x6D\x2F\x73\x65\x61\x72\x63\x68\x2F\x70\x68\x6F\x74\x6F\x73\x2F\x3F\x63\x6C\x69\x65\x6E\x74\x5F\x69\x64\x3D",
+    "\x26\x71\x75\x65\x72\x79\x3D",
+    "",
+    "\x6C\x6F\x67",
+  ];
+  const yes = _0x5886[0];
+  const url = `${_0x5886[1]}${yes}${_0x5886[2]}${destiny}${_0x5886[3]}`;
+  console[_0x5886[4]](url);
+
+  //   Make a request to API
+  fetch(url)
+    .then((response) => {
+      console.log(response);
+      if (response.ok) return response.json();
+      else alert("Wrong url");
+    })
+    .then((data) => {
+      console.log(data);
+      console.log(data.results);
+      console.log(data.results[0]);
+      console.log(data.results[5].links.html);
+      createImagesArray(data);
+    });
+}
+
+function createImagesArray(data) {
+  const imageNodes = [];
+  for (let i = 3; i < 9; i++) {
+    imageNodes[i] = document.createElement("div");
+    imageNodes[i].className = "imgg";
+    imageNodes[i].style.backgroundImage =
+      "url(" + data.results[i].urls.regular + ")";
+    imageNodes[i].addEventListener("dblclick", function () {
+      window.open(data.results[i].links.download, "_blank");
+    });
+    list.appendChild(imageNodes[i]);
+  }
 }
 
 /*
