@@ -42,7 +42,7 @@
 - Recommend tourist attractions, hotels and restaurants
 - Provide each country's COVID travel restrtictions info on the map
 
-  <img src="./images/11234.gif" alt="gif" width="300">
+  <img src="./images/11234.gif" alt="gif" width="400">
   <!-- <img src="https://cdn.kapwing.com/final_609f9f6c1643a900a0a25bc8_614283.gif" alt="gif" width="300"> -->
 
 <br>
