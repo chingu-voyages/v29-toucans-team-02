@@ -42,14 +42,12 @@
 - Recommend tourist attractions, hotels and restaurants
 - Provide each country's COVID travel restrtictions info on the map
 
-  <img src="https://cdn.kapwing.com/final_609d1257a0324b00948b326e_115504.gif" alt="gif" width="300">
-  <!-- <img src="https://cdn.kapwing.com/final_609d1257a0324b00948b326e_115504.gif" alt="gif" style="float:left; margin-right:10px;" width="300"> -->
+  <img src="./images/11234.gif" alt="gif" width="500">
+  <!-- <img src="https://cdn.kapwing.com/final_609f9f6c1643a900a0a25bc8_614283.gif" alt="gif" width="300"> -->
 
 <br>
 
 ## **Development**
-
-<br>
 
 ### **Technologies**
 
@@ -96,5 +94,6 @@ Deployed to Netlify : Click [here](https://wikitrip-v29-toucans02.netlify.app/)
 - **Morgan Bare**: Front-End Developer[[github](https://github.com/MorganBare)]
 - **Miruna Tataru**: Product Owner[[github](https://github.com/ioanat-123)]
 
-<!-- # License & Copyright -->
-<!-- Licensed under the [MIT License](LICENSE). -->
+# License & Copyright
+
+Licensed under the [MIT License](LICENSE).
