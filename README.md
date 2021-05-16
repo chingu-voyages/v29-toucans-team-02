@@ -67,7 +67,7 @@
 | [Mediawiki](https://www.mediawiki.org/wiki/API:Main_page)                          | Show users the destination's information                    |
 | [Unsplash](https://unsplash.com/documentation)                                     | Show users pictures of the destination                      |
 | [Openweather](https://openweathermap.org/api)                                      | Provide a weather information                               |
-| [Tiposo(https://www.triposo.com/api/)                                              | Recommend tourist attractions, hotels, restaurants          |
+| [Triposo](https://www.triposo.com/api/)                                            | Provides attractions, hotes, and restaurants                |
 
 <br>
 <br>
