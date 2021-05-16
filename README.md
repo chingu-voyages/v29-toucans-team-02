@@ -66,7 +66,7 @@
 | [Googlemaps](https://developers.google.com/maps/documentation/javascript/overview) | Autocomplete feature and finding the destination on the map |
 | [Mediawiki](https://www.mediawiki.org/wiki/API:Main_page)                          | Show users the destination's information                    |
 | [Unsplash](https://unsplash.com/documentation)                                     | Show users pictures of the destination                      |
-| [Openweather](https://openweathermap.org/api)                                      | Provide a weather information                               |
+| [Openweather](https://openweathermap.org/api)                                      | Provides weather information                               |
 | [Triposo](https://www.triposo.com/api/)                                            | Provides attractions, hotes, and restaurants                |
 
 <br>
