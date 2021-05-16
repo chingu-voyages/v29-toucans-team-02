@@ -16,7 +16,7 @@
 
 <br>
 
-**Wikitrip** is an **all-in-one travel website** that provides not only destination's weather info but also COVID travel restrictions, recommended hotels, restaurants and attractions. By clicking a search button with the destination, users are able to get all the necessary information without searching furthermore.
+**Wikitrip** is an **all-in-one travel website** that provides not only destination's weather info but also COVID travel restrictions, recommended hotels, restaurants and attractions. By clicking a search button with the destination, users are able to get all the necessary information without further searching.
 
 <br>
 
