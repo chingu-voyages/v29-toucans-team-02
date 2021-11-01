@@ -90,7 +90,7 @@ Deployed to Netlify : Click [here](https://wikitrip-v29-toucans02.netlify.app/)
 
 ## **Authors**
 
-- **Ryan Park**: Front-End Developer [[github](https://github.com/ryanbest99)]
+- **Ryan Park**: Front-End Developer [[linkedin](https://www.linkedin.com/in/ryanbest99/)]
 - **Morgan Bare**: Front-End Developer[[github](https://github.com/MorganBare)]
 - **Miruna Tataru**: Product Owner[[github](https://github.com/ioanat-123)]
 
